@@ -18,11 +18,12 @@ header {
   justify-content: center;
   align-items: center;
   background-color: #646464;
-  height: 15rem; }
+  height: 17rem; }
   header h1 {
-    color: #FFF1C7;
+    color: #ffda6c;
     margin: auto;
-    font-size: 8rem; }
+    font-size: 8rem;
+    letter-spacing: 1rem; }
   header nav {
     margin: 0 6rem 0 0; }
     header nav ul {
@@ -41,62 +42,86 @@ header {
 /* Main */
 main {
   display: grid;
-  grid-template-columns: 0.5fr 1.5fr;
+  grid-template-columns: 0.6fr 2fr 0.4fr;
   grid-template-rows: 1fr;
-  grid-template-areas: "Aside Section"; }
+  grid-template-areas: "Aside Section Div"; }
   main aside {
     grid-area: Aside;
     display: flex;
     flex-flow: column wrap;
-    justify-content: center;
     align-content: center;
-    background-color: #FFF1C7; }
+    background-color: #ffda6c; }
     main aside p {
-      font-size: 4rem;
-      text-align: center; }
-    main aside ul .amida {
-      list-style: url(/iconos/amida.svg); }
-    main aside ul .like {
-      list-style: url(/iconos/like.svg); }
-    main aside ul .phila {
-      list-style: url(/iconos/phila.svg); }
-    main aside ul .pluma {
-      list-style: url(/iconos/pluma.svg); }
-    main aside ul .tupper {
-      list-style: url(/iconos/tupper.svg); }
-    main aside ul .capa {
-      list-style: url(/iconos/capa.svg); }
-    main aside ul a {
-      font-size: 2rem; }
+      font-size: 3.5rem;
+      margin: 7rem 0 1rem 0;
+      text-align: center;
+      font-weight: 600;
+      font-family: 'Courier New', Courier, monospace; }
+    main aside ul {
+      margin-left: 3rem; }
+      main aside ul .amida {
+        list-style: url(/iconos/amida.svg);
+        margin: 2.5rem 0; }
+      main aside ul .like {
+        list-style: url(/iconos/like.svg);
+        margin: 2.5rem 0; }
+      main aside ul .phila {
+        list-style: url(/iconos/phila.svg);
+        margin: 2.5rem 0; }
+      main aside ul .pluma {
+        list-style: url(/iconos/pluma.svg);
+        margin: 2.5rem 0; }
+      main aside ul .tupper {
+        list-style: url(/iconos/tupper.svg);
+        margin: 2.5rem 0; }
+      main aside ul .capa {
+        list-style: url(/iconos/capa.svg);
+        margin: 2.5rem 0; }
+      main aside ul a {
+        font-size: 2rem;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
 
 .grilla_inicial {
   grid-area: Section;
   display: grid;
   grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 0.2fr);
   grid-auto-flow: dense;
+  justify-content: space-evenly;
   justify-items: center;
-  gap: 4rem;
-  margin: 6rem 0; }
+  gap: 5rem 0;
+  margin: 8rem 0 7rem 0; }
   .grilla_inicial img {
     width: 20rem;
     height: 20rem;
-    box-shadow: 1px 1px 15px 5px #0f0f0f; }
+    border: #000000 solid;
+    border-radius: 1rem; }
   .grilla_inicial p {
+    margin-top: 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     font-size: 1.5rem; }
+
+.skinner {
+  grid-area: Div;
+  margin: auto; }
+  .skinner img {
+    border: none;
+    width: 40rem;
+    height: 80rem; }
 
 /* Footer */
 footer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-color: #646464; }
   footer p {
     font-size: 1.8rem;
     font-weight: 600;
     text-align: center;
-    margin: auto 2rem;
+    color: #FFFFFF;
+    margin: auto 0 auto 6rem;
     text-decoration: underline; }
 
 .footer__iconos {
