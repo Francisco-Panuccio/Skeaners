@@ -64,17 +64,17 @@ main {
         margin: 2.5rem 0;
         width: fit-content; }
       main aside ul .amida {
-        list-style: url(/iconos/amida.svg); }
+        list-style: url(../iconos/amida.svg); }
       main aside ul .like {
-        list-style: url(/iconos/like.svg); }
+        list-style: url(../iconos/like.svg); }
       main aside ul .phila {
-        list-style: url(/iconos/phila.svg); }
+        list-style: url(../iconos/phila.svg); }
       main aside ul .pluma {
-        list-style: url(/iconos/pluma.svg); }
+        list-style: url(../iconos/pluma.svg); }
       main aside ul .tupper {
-        list-style: url(/iconos/tupper.svg); }
+        list-style: url(../iconos/tupper.svg); }
       main aside ul .cappa {
-        list-style: url(/iconos/capa.svg); }
+        list-style: url(../iconos/capa.svg); }
       main aside ul a {
         font-size: 2rem;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
