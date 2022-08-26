@@ -1,0 +1,111 @@
+/* Media Queries */
+
+@media only screen and (max-width: 1040px) {
+    main {
+        aside {
+            p {
+                margin: 7rem 1rem 1rem 1rem;
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 964px) {
+    .grilla_inicial {
+            img {
+                width: 15rem;
+                height: 15rem;
+            }
+    }
+
+    footer {
+        flex-flow: column wrap;
+            p {
+                margin: 2rem auto 0rem auto ;
+            }
+    }
+
+    .footer_iconos {
+        margin: 1rem auto;
+    }
+}
+
+@media only screen and (max-width: 715px) {
+    header {
+        h1 {
+            letter-spacing: 1rem;
+        }
+    }
+
+    main {
+        display: flex;
+        flex-flow: column wrap;
+            aside {
+                p {
+                    margin: 2rem auto 1rem auto;
+                }
+                ul {
+                    .primera_div {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        margin: 1rem 0 0 0;
+                    }
+                    .segunda_div {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        margin: 2rem 0 2rem 0;
+                    }
+                        li {
+                            margin: auto;
+                        }
+                }
+            }
+    }
+
+    .grilla_inicial {
+        margin: 5rem 0 4rem 0;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .carrito {
+        a {
+            margin: 0 0 1rem 0;
+        }
+    }
+
+    .grilla_inicial {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+            br {
+                display: block;
+            }
+    }
+
+    footer {
+        p {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    header {
+        h1 {
+            font-size: 6rem;
+        }
+        .carrito {
+            a {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .footer_iconos {
+        flex-flow: column wrap;
+    }
+}

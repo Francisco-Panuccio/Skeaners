@@ -23,7 +23,7 @@ header {
     color: #ffda6c;
     margin: auto;
     font-size: 8rem;
-    letter-spacing: 1rem; }
+    letter-spacing: 2rem; }
   header nav {
     margin: 0 6rem 0 0; }
     header nav ul {
@@ -34,6 +34,7 @@ header {
         align-items: center;
         font-size: 1.5rem;
         text-align: center;
+        margin-top: 1.7rem;
         color: #FFFFFF; }
         header nav ul a img {
           width: 4rem;
@@ -42,9 +43,9 @@ header {
 /* Main */
 main {
   display: grid;
-  grid-template-columns: 0.6fr 2fr 0.4fr;
+  grid-template-columns: 0.4fr 1.6fr;
   grid-template-rows: 1fr;
-  grid-template-areas: "Aside Section Div"; }
+  grid-template-areas: "Aside Section"; }
   main aside {
     grid-area: Aside;
     display: flex;
@@ -59,24 +60,21 @@ main {
       font-family: 'Courier New', Courier, monospace; }
     main aside ul {
       margin-left: 3rem; }
+      main aside ul li {
+        margin: 2.5rem 0;
+        width: fit-content; }
       main aside ul .amida {
-        list-style: url(/iconos/amida.svg);
-        margin: 2.5rem 0; }
+        list-style: url(/iconos/amida.svg); }
       main aside ul .like {
-        list-style: url(/iconos/like.svg);
-        margin: 2.5rem 0; }
+        list-style: url(/iconos/like.svg); }
       main aside ul .phila {
-        list-style: url(/iconos/phila.svg);
-        margin: 2.5rem 0; }
+        list-style: url(/iconos/phila.svg); }
       main aside ul .pluma {
-        list-style: url(/iconos/pluma.svg);
-        margin: 2.5rem 0; }
+        list-style: url(/iconos/pluma.svg); }
       main aside ul .tupper {
-        list-style: url(/iconos/tupper.svg);
-        margin: 2.5rem 0; }
-      main aside ul .capa {
-        list-style: url(/iconos/capa.svg);
-        margin: 2.5rem 0; }
+        list-style: url(/iconos/tupper.svg); }
+      main aside ul .cappa {
+        list-style: url(/iconos/capa.svg); }
       main aside ul a {
         font-size: 2rem;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
@@ -101,14 +99,8 @@ main {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     font-size: 1.5rem; }
-
-.skinner {
-  grid-area: Div;
-  margin: auto; }
-  .skinner img {
-    border: none;
-    width: 40rem;
-    height: 80rem; }
+  .grilla_inicial br {
+    display: none; }
 
 /* Footer */
 footer {
@@ -124,18 +116,18 @@ footer {
     margin: auto 0 auto 6rem;
     text-decoration: underline; }
 
-.footer__iconos {
+.footer_iconos {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
   margin: 2rem; }
-  .footer__iconos li a {
+  .footer_iconos li a {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     margin: 0 2rem; }
-    .footer__iconos li a span {
+    .footer_iconos li a span {
       border: 0.2rem solid #FFFFFF;
       font-size: 1.3rem;
       font-family: 'Oxanium', sans-serif;
@@ -143,12 +135,71 @@ footer {
       color: #FFFFFF;
       padding: 0.3rem;
       border-radius: 10px; }
-    .footer__iconos li a img {
+    .footer_iconos li a img {
       width: 2rem;
       height: 2rem;
       padding: 1rem;
       margin: 0 2rem;
       box-sizing: content-box; }
-      .footer__iconos li a img:hover {
+      .footer_iconos li a img:hover {
         transition: all 1s;
         transform: rotate(360deg); }
+
+/* Media Queries */
+@media only screen and (max-width: 1040px) {
+  main aside p {
+    margin: 7rem 1rem 1rem 1rem; } }
+
+@media only screen and (max-width: 964px) {
+  .grilla_inicial img {
+    width: 15rem;
+    height: 15rem; }
+  footer {
+    flex-flow: column wrap; }
+    footer p {
+      margin: 2rem auto 0rem auto; }
+  .footer_iconos {
+    margin: 1rem auto; } }
+
+@media only screen and (max-width: 715px) {
+  header h1 {
+    letter-spacing: 1rem; }
+  main {
+    display: flex;
+    flex-flow: column wrap; }
+    main aside p {
+      margin: 2rem auto 1rem auto; }
+    main aside ul .primera_div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 1rem 0 0 0; }
+    main aside ul .segunda_div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 2rem 0 2rem 0; }
+    main aside ul li {
+      margin: auto; }
+  .grilla_inicial {
+    margin: 5rem 0 4rem 0; } }
+
+@media only screen and (max-width: 480px) {
+  .carrito a {
+    margin: 0 0 1rem 0; }
+  .grilla_inicial {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center; }
+    .grilla_inicial br {
+      display: block; }
+  footer p {
+    font-size: 1.2rem; } }
+
+@media only screen and (max-width: 390px) {
+  header h1 {
+    font-size: 6rem; }
+  header .carrito a {
+    font-size: 2rem; }
+  .footer_iconos {
+    flex-flow: column wrap; } }

@@ -32,7 +32,7 @@ header {
             color: $color-secundario;
             margin: auto;
             font-size: 8rem;
-            letter-spacing: 1rem;
+            letter-spacing: 2rem;
         }
         nav {
             margin: 0 6rem 0 0;
@@ -44,6 +44,7 @@ header {
                             align-items: center;
                             font-size: 1.5rem;
                             text-align: center;
+                            margin-top: 1.7rem;
                             color: $color-principal;
                                 img {
                                     width: 4rem;
@@ -58,10 +59,10 @@ header {
 
 main {
     display: grid;
-    grid-template-columns: 0.6fr 2fr 0.4fr;
+    grid-template-columns: 0.4fr 1.6fr;
     grid-template-rows: 1fr;
     grid-template-areas: 
-    "Aside Section Div";
+    "Aside Section";
         aside {
             grid-area: Aside;
             display: flex;
@@ -77,34 +78,32 @@ main {
                 }
                 ul {
                     margin-left: 3rem;
-                    .amida {
-                        list-style:url(/iconos/amida.svg);
-                        margin: 2.5rem 0;
-                    }
-                    .like {
-                        list-style:url(/iconos/like.svg);
-                        margin: 2.5rem 0
-                    }
-                    .phila {
-                        list-style:url(/iconos/phila.svg);
-                        margin: 2.5rem 0
-                    }
-                    .pluma {
-                        list-style:url(/iconos/pluma.svg);
-                        margin: 2.5rem 0
-                    }
-                    .tupper {
-                        list-style:url(/iconos/tupper.svg);
-                        margin: 2.5rem 0
-                    }                  
-                    .capa {
-                        list-style:url(/iconos/capa.svg);
-                        margin: 2.5rem 0
-                    }
-                    a {
-                        font-size: 2rem;
-                        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-                    }
+                        li {
+                            margin: 2.5rem 0;
+                            width: fit-content;
+                        }
+                        .amida {
+                            list-style:url(/iconos/amida.svg);
+                        }
+                        .like {
+                            list-style:url(/iconos/like.svg);
+                        }
+                        .phila {
+                            list-style:url(/iconos/phila.svg);
+                        }
+                        .pluma {
+                            list-style:url(/iconos/pluma.svg);
+                        }
+                        .tupper {
+                            list-style:url(/iconos/tupper.svg);
+                        }                  
+                        .cappa {
+                            list-style:url(/iconos/capa.svg);
+                        }
+                            a {
+                                font-size: 2rem;
+                                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                            }
                 }
         }
 }
@@ -131,15 +130,8 @@ main {
             text-align: center;
             font-size: 1.5rem;
         }
-}
-
-.skinner {
-    grid-area: Div;
-    margin: auto;
-        img {
-            border: none;
-            width: 40rem;
-            height: 80rem;
+        br {
+            display: none;
         }
 }
 
@@ -160,7 +152,7 @@ footer {
         }
 }
 
-.footer__iconos {
+.footer_iconos {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
