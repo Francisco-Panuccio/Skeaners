@@ -42,7 +42,7 @@ switch (estilo){
     
 let talle = parseInt(prompt("Ingrese su talle:"));
 
-while (!talle || talle > 50){
+while (!talle || talle <30 || talle > 50){
     talle = parseInt(prompt("Ingrese su talle nuevamente:")); 
 }
 
