@@ -1,0 +1,16 @@
+/* Tupper */
+
+.grilla_marcas {
+    .tupper-1 {
+        background-image: url(../imagenes/tupper-1a.jpg);
+            &:hover{
+                background-image: url(../imagenes/tupper-1b.jpg);
+            }
+    }
+    .tupper-2 {
+        background-image: url(../imagenes/tupper-2a.jpg);
+            &:hover{
+                background-image: url(../imagenes/tupper-2b.jpg);
+            }
+    }
+}

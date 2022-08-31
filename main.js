@@ -39,7 +39,7 @@ switch (estilo){
         alert("Uh la la señor francés");
         break;
 }
-    
+
 let talle = parseInt(prompt("Ingrese su talle:"));
 
 while (!talle || talle <30 || talle > 50){

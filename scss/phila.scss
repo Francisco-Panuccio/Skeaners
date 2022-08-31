@@ -1,0 +1,16 @@
+/* Phila */
+
+.grilla_marcas {
+    .phila-1 {
+        background-image: url(../imagenes/phila-1a.png);
+            &:hover{
+                background-image: url(../imagenes/phila-1b.png);
+            }
+    }
+    .phila-2 {
+        background-image: url(../imagenes/phila-2a.png);
+            &:hover{
+                background-image: url(../imagenes/phila-2b.png);
+            }
+    }
+}

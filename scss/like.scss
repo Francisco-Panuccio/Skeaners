@@ -1,0 +1,28 @@
+/* Like */
+
+.grilla_marcas {
+    .like-1 {
+        background-image: url(../imagenes/like-1a.png);
+            &:hover{
+                background-image: url(../imagenes/like-1b.png);
+            }
+    }
+    .like-2 {
+        background-image: url(../imagenes/like-2a.png);
+            &:hover{
+                background-image: url(../imagenes/like-2b.png);
+            }
+    }
+    .like-3 {
+        background-image: url(../imagenes/like-3a.png);
+            &:hover{
+                background-image: url(../imagenes/like-3b.png);
+            }
+    }
+    .like-4 {
+        background-image: url(../imagenes/like-4a.png);
+            &:hover{
+                background-image: url(../imagenes/like-4b.png);
+            }
+    }
+}

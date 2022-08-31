@@ -1,0 +1,16 @@
+/* Cappa */
+
+.grilla_marcas {
+    .cappa-1 {
+        background-image: url(../imagenes/cappa-1a.jpg);
+            &:hover{
+                background-image: url(../imagenes/cappa-1b.jpg);
+            }
+    }
+    .cappa-2 {
+        background-image: url(../imagenes/cappa-2a.jpg);
+            &:hover{
+                background-image: url(../imagenes/cappa-2b.jpg);
+            }
+    }
+}

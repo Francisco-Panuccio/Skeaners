@@ -1,0 +1,66 @@
+/* Amidas */
+
+.grilla_marcas {
+    grid-area: Section;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 0.2fr);
+    grid-auto-flow: dense;
+    justify-content: space-evenly;
+    justify-items: center;
+    gap: 10rem 0;
+    margin: 8rem 0 10rem 0;
+        div {
+            width: 20rem;
+            height: 20rem;
+            border: #000000 solid;
+            border-radius: 1rem;
+            background-position: center;
+            background-size: cover;
+        }
+        .amida-1 {
+            background-image: url(../imagenes/amidas-1a.png);
+                &:hover{
+                    background-image: url(../imagenes/amidas-1b.jpg);
+                }
+        }
+        .amida-2 {
+            background-image: url(../imagenes/amidas-2a.png);
+                &:hover{
+                    background-image: url(../imagenes/amidas-2b.jpg);
+                }
+        }
+        .amida-3 {
+            background-image: url(../imagenes/amidas-3a.png);
+                &:hover{
+                    background-image: url(../imagenes/amidas-3b.jpg);
+                }
+        }
+        .amida-4 {
+            background-image: url(../imagenes/amidas-4a.png);
+                &:hover{
+                    background-image: url(../imagenes/amidas-4b.jpg);
+                }
+        }
+        p {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 21rem 0 0 0;
+        }
+        br {
+            display: none;
+        }
+        .precio {
+            display: block;
+            margin-bottom: .8rem;
+        }
+        span {
+            padding: .1rem;
+            color: #FFFFFF;
+            background-color: #000000;
+            border-radius: 1rem;
+            border: $color-terciario .2rem solid;
+            box-shadow: 2px 2px 9px black;
+        }
+}

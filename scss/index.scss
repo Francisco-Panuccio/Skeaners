@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    background-color: $color-principal;
+    background-color: $color-terciario;
 }
 
 a {
@@ -29,10 +29,12 @@ header {
     background-color: $color-terciario;
     height: 17rem;
         h1 {   
-            color: $color-secundario;
             margin: auto;
             font-size: 8rem;
             letter-spacing: 2rem;
+                a {
+                    color: $color-secundario;
+                }
         }
         nav {
             margin: 0 6rem 0 0;
@@ -63,6 +65,7 @@ main {
     grid-template-rows: 1fr;
     grid-template-areas: 
     "Aside Section";
+    background-color: $color-principal;
         aside {
             grid-area: Aside;
             display: flex;
@@ -98,7 +101,10 @@ main {
                             list-style:url(../iconos/tupper.svg);
                         }                  
                         .cappa {
-                            list-style:url(../iconos/capa.svg);
+                            list-style:url(../iconos/cappa.svg);
+                        }
+                        .home {
+                            list-style:url(../iconos/home.svg);
                         }
                             a {
                                 font-size: 2rem;

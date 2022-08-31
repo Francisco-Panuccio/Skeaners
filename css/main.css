@@ -6,7 +6,7 @@ html {
   font-size: 62.5%; }
 
 body {
-  background-color: #FFFFFF; }
+  background-color: #646464; }
 
 a {
   text-decoration: none; }
@@ -20,10 +20,11 @@ header {
   background-color: #646464;
   height: 17rem; }
   header h1 {
-    color: #ffda6c;
     margin: auto;
     font-size: 8rem;
     letter-spacing: 2rem; }
+    header h1 a {
+      color: #ffda6c; }
   header nav {
     margin: 0 6rem 0 0; }
     header nav ul {
@@ -45,7 +46,8 @@ main {
   display: grid;
   grid-template-columns: 0.4fr 1.6fr;
   grid-template-rows: 1fr;
-  grid-template-areas: "Aside Section"; }
+  grid-template-areas: "Aside Section";
+  background-color: #FFFFFF; }
   main aside {
     grid-area: Aside;
     display: flex;
@@ -74,7 +76,9 @@ main {
       main aside ul .tupper {
         list-style: url(../iconos/tupper.svg); }
       main aside ul .cappa {
-        list-style: url(../iconos/capa.svg); }
+        list-style: url(../iconos/cappa.svg); }
+      main aside ul .home {
+        list-style: url(../iconos/home.svg); }
       main aside ul a {
         font-size: 2rem;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
@@ -145,12 +149,133 @@ footer {
         transition: all 1s;
         transform: rotate(360deg); }
 
+/* Amidas */
+.grilla_marcas {
+  grid-area: Section;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 0.2fr);
+  grid-auto-flow: dense;
+  justify-content: space-evenly;
+  justify-items: center;
+  gap: 10rem 0;
+  margin: 8rem 0 10rem 0; }
+  .grilla_marcas div {
+    width: 20rem;
+    height: 20rem;
+    border: #000000 solid;
+    border-radius: 1rem;
+    background-position: center;
+    background-size: cover; }
+  .grilla_marcas .amida-1 {
+    background-image: url(../imagenes/amidas-1a.png); }
+    .grilla_marcas .amida-1:hover {
+      background-image: url(../imagenes/amidas-1b.jpg); }
+  .grilla_marcas .amida-2 {
+    background-image: url(../imagenes/amidas-2a.png); }
+    .grilla_marcas .amida-2:hover {
+      background-image: url(../imagenes/amidas-2b.jpg); }
+  .grilla_marcas .amida-3 {
+    background-image: url(../imagenes/amidas-3a.png); }
+    .grilla_marcas .amida-3:hover {
+      background-image: url(../imagenes/amidas-3b.jpg); }
+  .grilla_marcas .amida-4 {
+    background-image: url(../imagenes/amidas-4a.png); }
+    .grilla_marcas .amida-4:hover {
+      background-image: url(../imagenes/amidas-4b.jpg); }
+  .grilla_marcas p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 21rem 0 0 0; }
+  .grilla_marcas br {
+    display: none; }
+  .grilla_marcas .precio {
+    display: block;
+    margin-bottom: .8rem; }
+  .grilla_marcas span {
+    padding: .1rem;
+    color: #FFFFFF;
+    background-color: #000000;
+    border-radius: 1rem;
+    border: #646464 0.2rem solid;
+    box-shadow: 2px 2px 9px black; }
+
+/* Cappa */
+.grilla_marcas .cappa-1 {
+  background-image: url(../imagenes/cappa-1a.jpg); }
+  .grilla_marcas .cappa-1:hover {
+    background-image: url(../imagenes/cappa-1b.jpg); }
+
+.grilla_marcas .cappa-2 {
+  background-image: url(../imagenes/cappa-2a.jpg); }
+  .grilla_marcas .cappa-2:hover {
+    background-image: url(../imagenes/cappa-2b.jpg); }
+
+/* Like */
+.grilla_marcas .like-1 {
+  background-image: url(../imagenes/like-1a.png); }
+  .grilla_marcas .like-1:hover {
+    background-image: url(../imagenes/like-1b.png); }
+
+.grilla_marcas .like-2 {
+  background-image: url(../imagenes/like-2a.png); }
+  .grilla_marcas .like-2:hover {
+    background-image: url(../imagenes/like-2b.png); }
+
+.grilla_marcas .like-3 {
+  background-image: url(../imagenes/like-3a.png); }
+  .grilla_marcas .like-3:hover {
+    background-image: url(../imagenes/like-3b.png); }
+
+.grilla_marcas .like-4 {
+  background-image: url(../imagenes/like-4a.png); }
+  .grilla_marcas .like-4:hover {
+    background-image: url(../imagenes/like-4b.png); }
+
+/* Phila */
+.grilla_marcas .phila-1 {
+  background-image: url(../imagenes/phila-1a.png); }
+  .grilla_marcas .phila-1:hover {
+    background-image: url(../imagenes/phila-1b.png); }
+
+.grilla_marcas .phila-2 {
+  background-image: url(../imagenes/phila-2a.png); }
+  .grilla_marcas .phila-2:hover {
+    background-image: url(../imagenes/phila-2b.png); }
+
+/* Pluma */
+.grilla_marcas .pluma-1 {
+  background-image: url(../imagenes/pluma-1a.jpg); }
+  .grilla_marcas .pluma-1:hover {
+    background-image: url(../imagenes/pluma-1b.jpg); }
+
+.grilla_marcas .pluma-2 {
+  background-image: url(../imagenes/pluma-2a.jpg); }
+  .grilla_marcas .pluma-2:hover {
+    background-image: url(../imagenes/pluma-2b.jpg); }
+
+/* Tupper */
+.grilla_marcas .tupper-1 {
+  background-image: url(../imagenes/tupper-1a.jpg); }
+  .grilla_marcas .tupper-1:hover {
+    background-image: url(../imagenes/tupper-1b.jpg); }
+
+.grilla_marcas .tupper-2 {
+  background-image: url(../imagenes/tupper-2a.jpg); }
+  .grilla_marcas .tupper-2:hover {
+    background-image: url(../imagenes/tupper-2b.jpg); }
+
 /* Media Queries */
 @media only screen and (max-width: 1040px) {
   main aside p {
-    margin: 7rem 1rem 1rem 1rem; } }
+    margin: 7rem 1rem 1rem 1rem; }
+  main aside ul li {
+    margin: 2.5rem 5rem; } }
 
 @media only screen and (max-width: 964px) {
+  main aside ul li {
+    margin: 2.5rem 4rem; }
   .grilla_inicial img {
     width: 15rem;
     height: 15rem; }
@@ -159,7 +284,12 @@ footer {
     footer p {
       margin: 2rem auto 0rem auto; }
   .footer_iconos {
-    margin: 1rem auto; } }
+    margin: 1rem auto; }
+  .grilla_marcas div {
+    width: 15rem;
+    height: 15rem; }
+    .grilla_marcas div p {
+      margin: 16rem 0 0 0; } }
 
 @media only screen and (max-width: 715px) {
   header h1 {
@@ -182,16 +312,18 @@ footer {
     main aside ul li {
       margin: auto; }
   .grilla_inicial {
-    margin: 5rem 0 4rem 0; } }
+    margin: 5rem 0 4rem 0; }
+  .grilla_marcas {
+    margin: 5rem 0 10rem 0; } }
 
 @media only screen and (max-width: 480px) {
   .carrito a {
     margin: 0 0 1rem 0; }
-  .grilla_inicial {
+  .grilla_inicial, .grilla_marcas {
     display: flex;
     flex-flow: column wrap;
     align-items: center; }
-    .grilla_inicial br {
+    .grilla_inicial br, .grilla_marcas br {
       display: block; }
   footer p {
     font-size: 1.2rem; } }
