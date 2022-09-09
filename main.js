@@ -1,3 +1,20 @@
+class Sucursales {
+    constructor(id, provincia, ciudad, direccion){
+        this.id = id;
+        this.provincia = provincia;
+        this.ciudad = ciudad;
+        this.direccion = direccion;
+    }
+}
+
+const lanus = new Sucursales(1, "Buenos Aires", "Lanus", "25 de Mayo al 150");
+const avellaneda = new Sucursales(2, "Buenos Aires", "Avellaneda", "Alsina al 122");
+const quilmes = new Sucursales(3, "Buenos Aires", "Quilmes", "Alvear al 557");
+const pompeya = new Sucursales(4, "Buenos Aires", "Nueva Pompeya", "Av. Sáenz al 1200");
+const carlos_paz = new Sucursales(5, "Cordoba", "Villa Carlos Paz", "Las Heras al 280");
+
+const arraySucursales = [lanus, avellaneda, quilmes, pompeya, carlos_paz];
+
 class Zapatilla {
     constructor(marca, nombre, precio){
         this.marca = marca;
@@ -27,17 +44,23 @@ const tupper2 = new Zapatilla ("Tupper ", "Ultralight II Mesh ", 5700);
 const cappa1 = new Zapatilla ("Cappa ", "Logo Asti ", 6700);
 const cappa2 = new Zapatilla ("Cappa ", "Falvo ", 8000);
 
+/* Edad */
+
 let edad = parseInt(prompt("Ingrese su edad:"));
 
 while (!edad || edad <= 10 || edad >= 100){
     edad = parseInt(prompt("Ingrese su edad nuevamente (debe ser mayor de 10 años):"));
 }
 
+/* Talle */
+
 let talle = parseInt(prompt("Ingrese su talle:"));
 
 while (!talle || talle <30 || talle > 50){
     talle = parseInt(prompt("Ingrese su talle nuevamente:")); 
 }
+
+/* Estilo */
 
 let estilo = prompt("Escoja el estilo con el que mejor se adapte: \n\n 1 - Running \n 2 - Training \n 3 - Lifestyle");
 
@@ -54,6 +77,8 @@ else if (estilo == "2" || estilo == "Training" || estilo == "training"){
 else if (estilo == "3" || estilo == "Lifestyle" || estilo == "lifestyle"){
     opcion_3();
 }
+
+/* Recomendaciones */
 
 function opcion_1() {
     alert("Hit and Run");
@@ -103,6 +128,12 @@ function opcion_3() {
     }
 }
 
+function recomendacion (calzado) {
+    alert("Te recomendamos las " + calzado.pasarDatos());
+}
+
+/* Realizar Compra */
+
 let comprar = prompt("¿Desea comprar el producto?: (Si) / (No)");
 
 while (comprar != "si" && comprar != "SI" && comprar != "Si" && comprar != "no" && comprar != "NO" && comprar != "No"){
@@ -110,14 +141,18 @@ while (comprar != "si" && comprar != "SI" && comprar != "Si" && comprar != "no" 
 }
  
 if (comprar == "Si" || comprar == "SI" || comprar == "si"){
-    alert("Compra realizada exitosamente");
+    visitaSucursales();
 }
 
 if (comprar == "No" || comprar == "NO" || comprar == "no"){
     alert("¡Gracias, vuelva prontos!");
 }
 
-function recomendacion (calzado) {
-    alert("Te recomendamos las " + calzado.pasarDatos());
-}
+/* Sucursales */
 
+function visitaSucursales() {
+    let preguntaSucursal = parseInt(prompt("Perfecto, visita alguna de nuestras sucursales: \n\n1) Lanus \n2) Avellaneda \n3) Quilmes \n4) Nueva Pompeya \n5) Villa Carlos Paz"));
+    while (!preguntaSucursal) {preguntaSucursal = parseInt(prompt("Perfecto, visita alguna de nuestras sucursales: \n\n1) Lanus \n2) Avellaneda \n3) Quilmes \n4) Nueva Pompeya \n5) Villa Carlos Paz"));};
+    const buscarCiudad = arraySucursales.filter(enc => enc.id === preguntaSucursal);
+    buscarCiudad.forEach(resultado => alert("Nos encontramos en " + resultado.provincia + " " + resultado.ciudad + ", en " + resultado.direccion));
+}
