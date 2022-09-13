@@ -153,6 +153,6 @@ if (comprar == "No" || comprar == "NO" || comprar == "no"){
 function visitaSucursales() {
     let preguntaSucursal = parseInt(prompt("Perfecto, visita alguna de nuestras sucursales: \n\n1) Lanus \n2) Avellaneda \n3) Quilmes \n4) Nueva Pompeya \n5) Villa Carlos Paz"));
     while (!preguntaSucursal) {preguntaSucursal = parseInt(prompt("Perfecto, visita alguna de nuestras sucursales: \n\n1) Lanus \n2) Avellaneda \n3) Quilmes \n4) Nueva Pompeya \n5) Villa Carlos Paz"));};
-    const buscarCiudad = arraySucursales.filter(enc => enc.id === preguntaSucursal);
-    buscarCiudad.forEach(resultado => alert("Nos encontramos en " + resultado.provincia + " " + resultado.ciudad + ", en " + resultado.direccion));
+    const resultado = arraySucursales.find(enc => enc.id === preguntaSucursal);
+    alert("Nos encontramos en " + resultado.provincia + " " + resultado.ciudad + ", en " + resultado.direccion);
 }
