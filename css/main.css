@@ -29,16 +29,23 @@ header {
     margin: 0 6rem 0 0; }
     header nav ul {
       list-style: none; }
-      header nav ul a {
+      header nav ul button {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         text-align: center;
         margin-top: 1.7rem;
-        color: #FFFFFF; }
-        header nav ul a img {
-          width: 4rem;
+        background-color: #ffda6c;
+        border-radius: 1rem;
+        color: black;
+        padding: 1rem;
+        outline: none; }
+        header nav ul button:hover {
+          box-shadow: 2px 2px 9px #FFFFFF;
+          border: 0.2rem solid #FFFFFF; }
+        header nav ul button img {
+          width: 3rem;
           margin-right: 1rem; }
 
 /* Main */
@@ -103,6 +110,8 @@ main {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     font-size: 1.5rem; }
+  .grilla_inicial .br_especial {
+    display: inherit; }
   .grilla_inicial br {
     display: none; }
 
@@ -149,6 +158,99 @@ footer {
         transition: all 1s;
         transform: rotate(360deg); }
 
+/* Carrito JS */
+.popUp {
+  display: none; }
+
+.popUpShow {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  border: 0.3rem solid rgba(255, 255, 255, 0.647);
+  border-radius: 1rem;
+  padding: 2rem;
+  background-color: #000000c2;
+  color: white;
+  position: fixed;
+  width: 25%;
+  top: 1;
+  right: 0; }
+
+.popUp2 {
+  display: grid;
+  grid-template-columns: 2fr 1fr .5fr .3fr;
+  gap: 3rem;
+  align-items: center; }
+
+.popUp3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+#zapatilla {
+  font-size: 1.8rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: .5rem 0; }
+
+#precio {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: .5rem 0;
+  color: green;
+  background-color: #FFFFFF;
+  border-radius: 1rem;
+  padding: .3rem;
+  text-align: center; }
+
+#cantidad {
+  border-radius: 1rem;
+  text-align: center;
+  width: 5rem;
+  padding: .2rem;
+  outline: none; }
+
+#eliminar {
+  background: transparent;
+  border: none; }
+  #eliminar img {
+    margin-top: .4rem;
+    width: 2rem;
+    height: 2rem; }
+
+#montoTotal {
+  font-size: 1.8rem;
+  font-weight: 800;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  align-self: center;
+  margin: 4rem 0 2rem 0;
+  color: #1bc31b; }
+
+#botonCompra {
+  width: 30rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 2rem;
+  font-family: 'Courier New', Courier, monospace;
+  outline: none; }
+  #botonCompra:hover {
+    box-shadow: 2px 2px 9px #FFFFFF;
+    border: 0.2rem solid #FFFFFF;
+    background-color: #FFFFFF; }
+
+#botonOff {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  left: 3rem;
+  background-color: transparent; }
+  #botonOff:hover {
+    box-shadow: 2px 2px 9px #FFFFFF;
+    border: 0.2rem solid #FFFFFF; }
+  #botonOff img {
+    margin-top: .2rem;
+    background-position: center;
+    width: 2rem; }
+
 /* Amidas */
 .grilla_marcas {
   grid-area: Section;
@@ -194,11 +296,22 @@ footer {
     display: block;
     margin-bottom: .8rem; }
   .grilla_marcas span {
-    padding: .1rem;
+    padding: .3rem;
     color: #FFFFFF;
     background-color: #000000;
     border-radius: 1rem;
     border: #646464 0.2rem solid;
+    box-shadow: 2px 2px 9px black; }
+
+.botonAgregar {
+  font-size: 1.8rem;
+  margin-left: 1.5rem;
+  border-radius: 50%;
+  background-color: green;
+  color: #FFFFFF;
+  width: 3rem;
+  height: 3rem; }
+  .botonAgregar:hover {
     box-shadow: 2px 2px 9px black; }
 
 /* Cappa */
@@ -267,11 +380,29 @@ footer {
     background-image: url(../imagenes/tupper-2b.jpg); }
 
 /* Media Queries */
+@media only screen and (max-width: 1680px) {
+  .popUpShow {
+    width: 30%; } }
+
+@media only screen and (max-width: 1380px) {
+  .popUpShow {
+    width: 40%; } }
+
 @media only screen and (max-width: 1040px) {
   main aside p {
     margin: 7rem 1rem 1rem 1rem; }
   main aside ul li {
-    margin: 2.5rem 5rem; } }
+    margin: 2.5rem 5rem; }
+  #zapatilla {
+    font-size: 1.5rem; }
+  #precio {
+    font-size: 1.5rem; }
+  #montoTotal {
+    font-size: 1.6rem; }
+  #botonCompra {
+    width: 18rem;
+    font-size: 1.4rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; } }
 
 @media only screen and (max-width: 964px) {
   main aside ul li {
@@ -285,11 +416,13 @@ footer {
       margin: 2rem auto 0rem auto; }
   .footer_iconos {
     margin: 1rem auto; }
-  .grilla_marcas div {
-    width: 15rem;
-    height: 15rem; }
-    .grilla_marcas div p {
-      margin: 16rem 0 0 0; } }
+  .grilla_marcas {
+    gap: 15rem 0; }
+    .grilla_marcas div {
+      width: 15rem;
+      height: 15rem; }
+      .grilla_marcas div p {
+        margin: 16rem 0 0 0; } }
 
 @media only screen and (max-width: 715px) {
   header h1 {
@@ -314,11 +447,14 @@ footer {
   .grilla_inicial {
     margin: 5rem 0 4rem 0; }
   .grilla_marcas {
-    margin: 5rem 0 10rem 0; } }
+    margin: 5rem 0 10rem 0; }
+  .popUpShow {
+    top: 33.8rem;
+    width: 62%; } }
 
 @media only screen and (max-width: 480px) {
-  .carrito a {
-    margin: 0 0 1rem 0; }
+  .carrito button {
+    margin: 0 0 1rem 5rem; }
   .grilla_inicial, .grilla_marcas {
     display: flex;
     flex-flow: column wrap;
@@ -326,12 +462,14 @@ footer {
     .grilla_inicial br, .grilla_marcas br {
       display: block; }
   footer p {
-    font-size: 1.2rem; } }
+    font-size: 1.2rem; }
+  .popUpShow {
+    width: 90.2%; } }
 
 @media only screen and (max-width: 390px) {
   header h1 {
     font-size: 6rem; }
-  header .carrito a {
-    font-size: 2rem; }
+  header .carrito button {
+    font-size: 1.6rem; }
   .footer_iconos {
     flex-flow: column wrap; } }

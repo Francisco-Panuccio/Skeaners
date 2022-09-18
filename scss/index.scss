@@ -40,16 +40,24 @@ header {
             margin: 0 6rem 0 0;
                 ul {
                     list-style: none;
-                        a {
+                        button {
                             display: flex;
                             flex-wrap: wrap;
                             align-items: center;
-                            font-size: 1.5rem;
+                            font-size: 1.8rem;
                             text-align: center;
                             margin-top: 1.7rem;
-                            color: $color-principal;
+                            background-color: $color-secundario;
+                            border-radius: 1rem;
+                            color: black;
+                            padding: 1rem;
+                            outline: none;
+                                &:hover{
+                                    box-shadow: 2px 2px 9px #FFFFFF;
+                                    border: 0.2rem solid #FFFFFF;
+                                }  
                                 img {
-                                    width: 4rem;
+                                    width: 3rem;
                                     margin-right: 1rem;
                                 }
                         }
@@ -136,6 +144,9 @@ main {
             text-align: center;
             font-size: 1.5rem;
         }
+        .br_especial {
+            display: inherit;
+        }
         br {
             display: none;
         }
@@ -191,5 +202,114 @@ footer {
                             }
                     }
             }
+        }
+}
+
+/* Carrito JS */
+
+.popUp {
+    display: none;
+}
+
+.popUpShow {
+    display: flex;
+    flex-flow: column wrap; 
+    justify-content: space-between;
+    border: 0.3rem solid rgba(255, 255, 255, 0.647);
+    border-radius: 1rem;
+    padding: 2rem;
+    background-color: #000000c2;
+    color: white; 
+    position: fixed;
+    width: 25%;
+    top: 1;
+    right: 0;
+}
+
+.popUp2 {
+    display: grid;
+    grid-template-columns: 2fr 1fr .5fr .3fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.popUp3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#zapatilla {
+    font-size: 1.8rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: .5rem 0;
+}
+
+#precio {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: .5rem 0;
+    color: green;
+    background-color: $color-principal;
+    border-radius: 1rem;
+    padding: .3rem;
+    text-align: center;
+}
+
+#cantidad {
+    border-radius: 1rem;
+    text-align: center;
+    width: 5rem;
+    padding: .2rem;
+    outline: none;
+}
+
+#eliminar {
+    background: transparent;
+    border: none;
+        img {
+            margin-top: .4rem;
+            width: 2rem;
+            height: 2rem;
+        }
+}
+
+#montoTotal {
+    font-size: 1.8rem;
+    font-weight: 800;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    align-self: center;
+    margin: 4rem 0 2rem 0;
+    color: rgb(27, 195, 27);
+}
+
+#botonCompra {
+    width: 30rem;
+    border-radius: 1rem;
+    font-weight: 600;
+    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    outline: none;
+        &:hover{
+            box-shadow: 2px 2px 9px #FFFFFF;
+            border: 0.2rem solid #FFFFFF;
+            background-color: $color-principal;
+        }
+}
+
+#botonOff {
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    left: 3rem;
+    background-color: transparent;
+        &:hover{
+            box-shadow: 2px 2px 9px #FFFFFF;
+            border: 0.2rem solid #FFFFFF;
+        }
+        img {
+            margin-top: .2rem;
+            background-position: center;
+            width: 2rem;
         }
 }

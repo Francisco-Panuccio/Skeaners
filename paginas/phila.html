@@ -16,12 +16,19 @@
         <h1><a href="../index.html">Skeaners</a></h1>
         <nav>
             <ul class="carrito">
-                <li><a href="#"><img src="../iconos/carrito.svg" alt="Logo Carrito de Compras">Mi Carrito</a></li>
+                <li><button id="carritoCompra"><img src="../iconos/carrito.svg" alt="Logo Carrito de Compras">Mi Carrito</button></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <div class="popUp">
+            <p id="montoTotal">Monto Total:</p>
+            <div class="popUp3">
+                <button id="botonOff"><img src="../imagenes/x.png" alt="Icono Equis"></button>
+                <button id="botonCompra">Realizar Compra</button>
+            </div>
+        </div>
         <aside>
             <p>Elige una marca</p>
             <ul>
@@ -38,8 +45,8 @@
             </ul>
         </aside>
         <section class="grilla_marcas">
-            <div class="phila-1"><p>Phila Trend 2.0 <br class="precio"> <span>$6.000</p></div>
-            <div class="phila-2"><p>Phila Novaro <br class="precio"> <span>$10.000</p></div>
+            <div class="phila-1"><p>Phila Trend 2.0 <br class="precio"> <span>$6.000</span><button class="botonAgregar" idzapatilla = 9>+</button></p></div>
+            <div class="phila-2"><p>Phila Novaro <br class="precio"> <span>$10.000</span><button class="botonAgregar" idzapatilla = 10>+</button></p></div>
         </section>
     </main>
 
@@ -53,6 +60,8 @@
         </ul>
     </footer>
     
+    <script src="../js/datos.js"></script>
+
 </body>
 
 </html>

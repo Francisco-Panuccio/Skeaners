@@ -16,12 +16,19 @@
         <h1><a href="../index.html">Skeaners</a></h1>
         <nav>
             <ul class="carrito">
-                <li><a href="#"><img src="../iconos/carrito.svg" alt="Logo Carrito de Compras">Mi Carrito</a></li>
+                <li><button id="carritoCompra"><img src="../iconos/carrito.svg" alt="Logo Carrito de Compras">Mi Carrito</button></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <div class="popUp">
+            <p id="montoTotal">Monto Total:</p>
+            <div class="popUp3">
+                <button id="botonOff"><img src="../imagenes/x.png" alt="Icono Equis"></button>
+                <button id="botonCompra">Realizar Compra</button>
+            </div>
+        </div>
         <aside>
             <p>Elige una marca</p>
             <ul>
@@ -38,10 +45,10 @@
             </ul>
         </aside>
         <section class="grilla_marcas">
-            <div class="amida-1"><p>Amidas VS Pace <br class="precio"> <span>$8.000</span></p></div>
-            <div class="amida-2"><p>Amidas Grand Court <br class="precio"> <span>$12.000</span></p></div>
-            <div class="amida-3"><p>Amidas Forum Low <br class="precio"> <span>$20.000</span></p></div>
-            <div class="amida-4"><p>Amidas Solarcontrol <br class="precio"> <span>$25.000</span></p></div>
+            <div class="amida-1"><p>Amidas VS Pace <br class="precio"> <span>$8.000</span><button class="botonAgregar" idzapatilla = 1>+</button></p></div>
+            <div class="amida-2"><p>Amidas Grand Court <br class="precio"> <span>$12.000</span><button class="botonAgregar" idzapatilla = 2>+</button></p></div>
+            <div class="amida-3"><p>Amidas Forum Low <br class="precio"> <span>$20.000</span><button class="botonAgregar" idzapatilla = 3>+</button></p></div>
+            <div class="amida-4"><p>Amidas Solarcontrol <br class="precio"> <span>$25.000</span><button class="botonAgregar" idzapatilla = 4>+</button></p></div>
         </section>
     </main>
 
@@ -55,6 +62,8 @@
         </ul>
     </footer>
     
+    <script src="../js/datos.js"></script>
+
 </body>
 
 </html>

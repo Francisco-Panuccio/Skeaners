@@ -56,11 +56,24 @@
             margin-bottom: .8rem;
         }
         span {
-            padding: .1rem;
+            padding: .3rem;
             color: #FFFFFF;
             background-color: #000000;
             border-radius: 1rem;
             border: $color-terciario .2rem solid;
             box-shadow: 2px 2px 9px black;
         }
+}
+
+.botonAgregar {
+    font-size: 1.8rem;
+    margin-left: 1.5rem;
+    border-radius: 50%;
+    background-color: green;
+    color: $color-principal;
+    width: 3rem;
+    height: 3rem;
+    &:hover{
+        box-shadow: 2px 2px 9px black;
+    }
 }
