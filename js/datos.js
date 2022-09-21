@@ -53,6 +53,15 @@ const arrayZapatillas = [amidas1, amidas2, amidas3, amidas4, like1, like2, like3
 const arrayCarrito = [];
 const arrayMultiplicacion = [];
 
+
+
+/* if(localStorage.getItem("precios")) {
+    let traerMult = JSON.parse(localStorage.getItem("precios"));
+    for(let i = 0; i < traerMult.length; i++) {
+        arrayMultiplicacion.push(traerMult[i]);
+    }
+} */
+
 /* Carrito */
 
 let divMain = document.querySelector(".popUp");
@@ -89,9 +98,21 @@ for(const botonMas of botonCantidad) {
             crearVisual(resultadoZapatilla);
         }
         agregarCantidad(resultadoZapatilla);
-        console.log(arrayMultiplicacion);
+        const carritoJSON = JSON.stringify(arrayCarrito);
+        localStorage.setItem("objetos",carritoJSON);
+        const multiplicacionJSON = JSON.stringify(arrayMultiplicacion);
+        localStorage.setItem("precios",multiplicacionJSON);
+        console.log(carritoJSON);
+        console.log(multiplicacionJSON);
     })
 } 
+
+if(localStorage.getItem("objetos")) {
+    let traerCarrito = JSON.parse(localStorage.getItem("objetos"));
+    for(let i = 0; i < traerCarrito.length; i++) {
+        arrayCarrito.push(traerCarrito[i]);
+    }
+}
 
 function agregarCantidad(zapatillaEnCarrito) {
     arrayMultiplicacion.push(zapatillaEnCarrito.precio);
@@ -110,8 +131,7 @@ function crearVisual(resultadoZapatilla) {
     div.className = "popUp2";
     div.innerHTML = `<p class="zapatilla" id="zapatilla_${resultadoZapatilla.id}">${resultadoZapatilla.marca + resultadoZapatilla.nombre}</p>
                     <p class="precio" id="precio_${resultadoZapatilla.id}">${"$" + resultadoZapatilla.precio.toLocaleString()}</p>
-                    <input type="text" min=1 max=10 readonly value=1 class="cantidad" id="cantidad_${resultadoZapatilla.id}">
-                    <p>Monto Total:<span></span></p>`
+                    <input type="text" min=1 max=10 readonly value=1 class="cantidad" id="cantidad_${resultadoZapatilla.id}">`
     let botonEliminar = document.createElement("button");
     botonEliminar.className = "eliminar";
     botonEliminar.innerHTML = `<img src = "../imagenes/bin.png">`;
@@ -122,6 +142,6 @@ function crearVisual(resultadoZapatilla) {
         div.remove();
         const indiceArrayCarrito = arrayCarrito.indexOf(resultadoZapatilla);
         arrayCarrito.splice(indiceArrayCarrito,1);
-        /* eliminarCantidad(resultadoZapatilla, sumaTotal); */
+        eliminarCantidad(resultadoZapatilla, sumaTotal);
     });
 }
