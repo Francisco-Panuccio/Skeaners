@@ -63,7 +63,7 @@ let total = document.getElementById("montoTotal");
 
 botonCompraOn.addEventListener("click", (e) => {
     e.preventDefault();
-    divMain.className = "popUpShow";
+    divMain.classList.toggle("popUpShow");
 });
 
 botonCompraOff.addEventListener("click", (e) => {
@@ -89,6 +89,7 @@ for(const botonMas of botonCantidad) {
             crearVisual(resultadoZapatilla);
         }
         agregarCantidad(resultadoZapatilla);
+        console.log(arrayMultiplicacion);
     })
 } 
 
@@ -98,12 +99,19 @@ function agregarCantidad(zapatillaEnCarrito) {
     total.innerText = `Monto Total: ${"$" + sumaTotal.toLocaleString()}`;
 }
 
+/* function eliminarCantidad(precioMult, totalNuevo) {
+    const indiceArrayMultiplicacion = arrayMultiplicacion.indexOf(precioMult.precio);
+    arrayMultiplicacion.splice(indiceArrayMultiplicacion);
+    total.innerText = `Monto Total: ${"$" + totalNuevo.toLocaleString()}`;
+} */
+
 function crearVisual(resultadoZapatilla) {
     let div = document.createElement("div");
     div.className = "popUp2";
     div.innerHTML = `<p class="zapatilla" id="zapatilla_${resultadoZapatilla.id}">${resultadoZapatilla.marca + resultadoZapatilla.nombre}</p>
                     <p class="precio" id="precio_${resultadoZapatilla.id}">${"$" + resultadoZapatilla.precio.toLocaleString()}</p>
-                    <input type="number" min=1 max=10 readonly value=1 class="cantidad" id="cantidad_${resultadoZapatilla.id}">`
+                    <input type="text" min=1 max=10 readonly value=1 class="cantidad" id="cantidad_${resultadoZapatilla.id}">
+                    <p>Monto Total:<span></span></p>`
     let botonEliminar = document.createElement("button");
     botonEliminar.className = "eliminar";
     botonEliminar.innerHTML = `<img src = "../imagenes/bin.png">`;
@@ -112,29 +120,8 @@ function crearVisual(resultadoZapatilla) {
     botonEliminar.addEventListener("click", (e) => {
         e.preventDefault();
         div.remove();
-        const indiceArrayClientes = arrayCarrito.indexOf(resultadoZapatilla);
-        arrayCarrito.splice(indiceArrayClientes,1);
-        /*const indiceArrayMultiplicacion = arrayMultiplicacion.indexOf(zapatillaEnCarrito.precio);
-        arrayMultiplicacion.splice(indiceArrayMultiplicacion);
-        total.innerText = `Monto Total: ${"$" + sumaTotal.toLocaleString()}`; */
+        const indiceArrayCarrito = arrayCarrito.indexOf(resultadoZapatilla);
+        arrayCarrito.splice(indiceArrayCarrito,1);
+        /* eliminarCantidad(resultadoZapatilla, sumaTotal); */
     });
 }
-
-
-
-
-
-    /* HACER FUNCION CON EVENTO CHANGE DONDE CADA VEZ QUE SE CAMBIE ALGO
-    SE MULTIPLIQUE */
-
-    /* SI HAY ALGO REPETIDO EN EL ARRAY SE MULTIPLICA POR LA CANTIDAD DE VECES
-    QUE ESTÉ REPETIDO*/
-
-    /* function repetidos(array) {
-    for(let i = 0; i < array.length - 1; ++i){
-        if(array.slice(i + 1).indexOf(array[i]) !== -1){
-            return true;
-        }
-        return false;
-    }
-    } */
