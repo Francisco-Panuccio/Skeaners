@@ -8,8 +8,8 @@
     grid-auto-flow: dense;
     justify-content: space-evenly;
     justify-items: center;
-    gap: 10rem 0;
-    margin: 8rem 0 10rem 0;
+    gap: 15rem 0;
+    margin: 8rem 0 16rem 0;
         div {
             width: 20rem;
             height: 20rem;
@@ -56,8 +56,8 @@
             margin-bottom: .8rem;
         }
         span {
-            padding: .3rem;
-            color: #FFFFFF;
+            padding: 1rem;
+            color: $color-principal;
             background-color: #000000;
             border-radius: 1rem;
             border: $color-terciario .2rem solid;
@@ -67,12 +67,12 @@
 
 .botonAgregar {
     font-size: 1.8rem;
-    margin-left: 1.5rem;
+    margin: 0 0 0 1.5rem;
     border-radius: 50%;
     background-color: green;
     color: $color-principal;
-    width: 3rem;
-    height: 3rem;
+    width: 4rem;
+    height: 4rem;
     &:hover{
         box-shadow: 2px 2px 9px black;
     }

@@ -50,58 +50,91 @@ const cappa1 = new Zapatilla (15, "Cappa ", "Logo Asti ", 6700);
 const cappa2 = new Zapatilla (16, "Cappa ", "Falvo ", 8000);
 
 const arrayZapatillas = [amidas1, amidas2, amidas3, amidas4, like1, like2, like3, like4, phila1, phila2, pluma1, pluma2, tupper1, tupper2, cappa1, cappa2];
-const arrayVacio = [];
+const arrayCarrito = [];
+const arrayMultiplicacion = [];
 
 /* Carrito */
 
 let divMain = document.querySelector(".popUp");
 let botonCompraOn = document.getElementById("carritoCompra");
 let botonCompraOff = document.getElementById("botonOff");
+const botonCantidad = document.querySelectorAll(".botonAgregar");
+let total = document.getElementById("montoTotal");
 
 botonCompraOn.addEventListener("click", (e) => {
     e.preventDefault();
     divMain.className = "popUpShow";
 });
 
-
 botonCompraOff.addEventListener("click", (e) => {
     e.preventDefault();
     divMain.className = "popUp";
 });
 
-
-const botonCantidad = document.querySelectorAll(".botonAgregar");
-const agregarMarcaZap = document.getElementById("zapatilla");
-const agregarPrecio = document.getElementById("precio");
-
 for(const botonMas of botonCantidad) {
     botonMas.addEventListener("click", (e) => {
         e.preventDefault();
         divMain.className = "popUpShow";
-        let resultadoId = botonMas.getAttribute("idzapatilla");
+        const resultadoId = botonMas.getAttribute("idzapatilla");
         const resultadoZapatilla = arrayZapatillas.find(busq => busq.id == resultadoId);
-        let div = document.createElement("div");
-        div.className = "popUp2";
-        div.innerHTML = `<p id="zapatilla">${resultadoZapatilla.marca + resultadoZapatilla.nombre}</p>
-                        <p id="precio">${"$" + resultadoZapatilla.precio.toLocaleString()}</p>
-                        <input type="number" min="1" max="10" maxlength="2" id="cantidad">
-                        <button id="eliminar"><img src = 'https://cdn2.iconfinder.com/data/icons/thin-line-color-1/21/33-512.png'></button>`
-        divMain.prepend(div);
-        let remove = document.getElementById("eliminar");
-        remove.addEventListener("click", (e) => {
-            div.remove();
-        });
-        document.querySelectorAll(`input[type="number"]`).forEach(input =>{
-            input.oninput = () =>{
-                if(input.value < 0 || input.value > 10){
-                    input.value = 1;
-                }
+        const zapatillaEnCarrito = arrayCarrito.find(nomb => nomb.id == resultadoId);
+        const elementoInput = document.getElementById(`cantidad_${resultadoZapatilla.id}`);
+        if (zapatillaEnCarrito){
+            if(elementoInput.value < 10){
+                elementoInput.value++;
             }
-        });
-        let precioZapatilla = document.querySelectorAll("#precio").value;
-        let cantidadInput = document.querySelectorAll("#cantidad").value;
-        let total = document.getElementById("montoTotal");
-        let sumaTotal = parseInt(precioZapatilla * cantidadInput);
-        total.innerText = `Monto Total: ${sumaTotal}`;
+        }
+        else {
+            arrayCarrito.unshift(resultadoZapatilla);
+            crearVisual(resultadoZapatilla);
+        }
+        agregarCantidad(resultadoZapatilla);
     })
+} 
+
+function agregarCantidad(zapatillaEnCarrito) {
+    arrayMultiplicacion.push(zapatillaEnCarrito.precio);
+    const sumaTotal = arrayMultiplicacion.reduce((a,b) => a + b);
+    total.innerText = `Monto Total: ${"$" + sumaTotal.toLocaleString()}`;
 }
+
+function crearVisual(resultadoZapatilla) {
+    let div = document.createElement("div");
+    div.className = "popUp2";
+    div.innerHTML = `<p class="zapatilla" id="zapatilla_${resultadoZapatilla.id}">${resultadoZapatilla.marca + resultadoZapatilla.nombre}</p>
+                    <p class="precio" id="precio_${resultadoZapatilla.id}">${"$" + resultadoZapatilla.precio.toLocaleString()}</p>
+                    <input type="number" min=1 max=10 readonly value=1 class="cantidad" id="cantidad_${resultadoZapatilla.id}">`
+    let botonEliminar = document.createElement("button");
+    botonEliminar.className = "eliminar";
+    botonEliminar.innerHTML = `<img src = "../imagenes/bin.png">`;
+    div.appendChild(botonEliminar);
+    divMain.prepend(div);
+    botonEliminar.addEventListener("click", (e) => {
+        e.preventDefault();
+        div.remove();
+        const indiceArrayClientes = arrayCarrito.indexOf(resultadoZapatilla);
+        arrayCarrito.splice(indiceArrayClientes,1);
+        /*const indiceArrayMultiplicacion = arrayMultiplicacion.indexOf(zapatillaEnCarrito.precio);
+        arrayMultiplicacion.splice(indiceArrayMultiplicacion);
+        total.innerText = `Monto Total: ${"$" + sumaTotal.toLocaleString()}`; */
+    });
+}
+
+
+
+
+
+    /* HACER FUNCION CON EVENTO CHANGE DONDE CADA VEZ QUE SE CAMBIE ALGO
+    SE MULTIPLIQUE */
+
+    /* SI HAY ALGO REPETIDO EN EL ARRAY SE MULTIPLICA POR LA CANTIDAD DE VECES
+    QUE ESTÉ REPETIDO*/
+
+    /* function repetidos(array) {
+    for(let i = 0; i < array.length - 1; ++i){
+        if(array.slice(i + 1).indexOf(array[i]) !== -1){
+            return true;
+        }
+        return false;
+    }
+    } */

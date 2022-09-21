@@ -26,20 +26,16 @@
         }
     }
 
-    .popUpShow {
-
+    .zapatilla {
+        font-size: 1.6rem;
     }
 
-    #zapatilla {
-        font-size: 1.5rem;
-    }
-
-    #precio {
-        font-size: 1.5rem;
+    .precio {
+        font-size: 1.6rem;
     }
 
     #montoTotal {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
     }
 
     #botonCompra {
@@ -78,6 +74,18 @@
     }
 
     .grilla_marcas {
+        gap: 15rem 0;
+        margin: 6rem 0 15.5rem 0;
+        div {
+            width: 15rem;
+            height: 15rem;
+                p {
+                    margin: 16rem 0 0 0;
+                }
+        }
+    }
+
+    .grilla_marcas2 {
         gap: 15rem 0;
         div {
             width: 15rem;
@@ -128,7 +136,11 @@
     }
 
     .grilla_marcas {
-        margin: 5rem 0 10rem 0;
+        margin: 5rem 0 14rem 0;
+    }
+
+    .grilla_marcas2 {
+        margin: 7rem 0 33rem 0;
     }
 
     .popUpShow {
@@ -137,14 +149,14 @@
     }
 }    
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 591px) {
     .carrito {
         button {
             margin: 0 0 1rem 5rem;
         }
     }
 
-    .grilla_inicial, .grilla_marcas {
+    .grilla_inicial {
         display: flex;
         flex-flow: column wrap;
         align-items: center;
@@ -153,9 +165,19 @@
             }
     }
 
+    .grilla_marcas, .grilla_marcas2 {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        margin: 4.5rem 0 14rem 0;
+            br {
+                display: block;
+            }
+    }
+
     footer {
         p {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
         }
     }
 

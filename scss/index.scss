@@ -239,14 +239,15 @@ footer {
     justify-content: center;
 }
 
-#zapatilla {
-    font-size: 1.8rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.zapatilla {
+    font-size: 1.7rem;
     margin: .5rem 0;
+    font-family: sans-serif;
 }
 
-#precio {
-    font-size: 1.8rem;
+.precio {
+    font-size: 1.7rem;
+    font-family: sans-serif;
     font-weight: bold;
     margin: .5rem 0;
     color: green;
@@ -256,7 +257,7 @@ footer {
     text-align: center;
 }
 
-#cantidad {
+.cantidad {
     border-radius: 1rem;
     text-align: center;
     width: 5rem;
@@ -264,7 +265,7 @@ footer {
     outline: none;
 }
 
-#eliminar {
+.eliminar {
     background: transparent;
     border: none;
         img {
@@ -275,9 +276,9 @@ footer {
 }
 
 #montoTotal {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 800;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: cursive;
     align-self: center;
     margin: 4rem 0 2rem 0;
     color: rgb(27, 195, 27);
