@@ -9,59 +9,35 @@
     justify-content: space-evenly;
     justify-items: center;
     gap: 15rem 0;
-    margin: 8rem 0 16rem 0;
         div {
             width: 20rem;
             height: 20rem;
             border: #000000 solid;
             border-radius: 1rem;
-            background-position: center;
-            background-size: cover;
-        }
-        .amida-1 {
-            background-image: url(../imagenes/amidas-1a.png);
-                &:hover{
-                    background-image: url(../imagenes/amidas-1b.jpg);
+                img {
+                    width: 20rem;
+                    height: 20rem;
                 }
-        }
-        .amida-2 {
-            background-image: url(../imagenes/amidas-2a.png);
-                &:hover{
-                    background-image: url(../imagenes/amidas-2b.jpg);
+                p {
+                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                    text-align: center;
+                    font-size: 1.5rem;
                 }
-        }
-        .amida-3 {
-            background-image: url(../imagenes/amidas-3a.png);
-                &:hover{
-                    background-image: url(../imagenes/amidas-3b.jpg);
+                br {
+                    display: none;
+                } 
+                .precio {
+                        display: block;
+                        margin-bottom: .8rem;
                 }
-        }
-        .amida-4 {
-            background-image: url(../imagenes/amidas-4a.png);
-                &:hover{
-                    background-image: url(../imagenes/amidas-4b.jpg);
+                span {
+                    padding: 1rem;
+                    color: $color-principal;
+                    background-color: #000000;
+                    border-radius: 1rem;
+                    border: $color-terciario .2rem solid;
+                    box-shadow: 2px 2px 9px black;
                 }
-        }
-        p {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            text-align: center;
-            font-size: 1.5rem;
-            margin: 21rem 0 0 0;
-        }
-        br {
-            display: none;
-        }
-        .precio {
-            display: block;
-            margin-bottom: .8rem;
-        }
-        span {
-            padding: 1rem;
-            color: $color-principal;
-            background-color: #000000;
-            border-radius: 1rem;
-            border: $color-terciario .2rem solid;
-            box-shadow: 2px 2px 9px black;
         }
 }
 

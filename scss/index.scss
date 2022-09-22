@@ -114,8 +114,10 @@ main {
                         .home {
                             list-style:url(../iconos/home.svg);
                         }
-                            a {
+                            button {
                                 font-size: 2rem;
+                                background: transparent;
+                                /* border: none; */
                                 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
                             }
                 }
