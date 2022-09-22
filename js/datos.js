@@ -53,12 +53,11 @@ const arrayZapatillas = [amidas1, amidas2, amidas3, amidas4, like1, like2, like3
 const arrayCarrito = [];
 const arrayMultiplicacion = [];
 
-
-
 /* if(localStorage.getItem("precios")) {
     let traerMult = JSON.parse(localStorage.getItem("precios"));
     for(let i = 0; i < traerMult.length; i++) {
-        arrayMultiplicacion.push(traerMult[i]);
+        arrayMultiplicacion.push(traerMult[i])
+        crearVisual(traerCarrito[i]);
     }
 } */
 
@@ -98,21 +97,18 @@ for(const botonMas of botonCantidad) {
             crearVisual(resultadoZapatilla);
         }
         agregarCantidad(resultadoZapatilla);
-        const carritoJSON = JSON.stringify(arrayCarrito);
-        localStorage.setItem("objetos",carritoJSON);
-        const multiplicacionJSON = JSON.stringify(arrayMultiplicacion);
-        localStorage.setItem("precios",multiplicacionJSON);
-        console.log(carritoJSON);
-        console.log(multiplicacionJSON);
+        /* const carritoJSON = localStorage.setItem("objetos",JSON.stringify(arrayMultiplicacion));
+        const multiplicacionJSON = localStorage.setItem("precios",JSON.stringify(arrayMultiplicacion)); */
     })
 } 
 
-if(localStorage.getItem("objetos")) {
+/* if(localStorage.getItem("objetos")) {
     let traerCarrito = JSON.parse(localStorage.getItem("objetos"));
     for(let i = 0; i < traerCarrito.length; i++) {
         arrayCarrito.push(traerCarrito[i]);
+        crearVisual(traerCarrito[i]);
     }
-}
+} */
 
 function agregarCantidad(zapatillaEnCarrito) {
     arrayMultiplicacion.push(zapatillaEnCarrito.precio);
@@ -120,11 +116,11 @@ function agregarCantidad(zapatillaEnCarrito) {
     total.innerText = `Monto Total: ${"$" + sumaTotal.toLocaleString()}`;
 }
 
-/* function eliminarCantidad(precioMult, totalNuevo) {
-    const indiceArrayMultiplicacion = arrayMultiplicacion.indexOf(precioMult.precio);
-    arrayMultiplicacion.splice(indiceArrayMultiplicacion);
-    total.innerText = `Monto Total: ${"$" + totalNuevo.toLocaleString()}`;
-} */
+function eliminarCantidad(zapatillaEnCarrito) {
+    const indiceArrayMultiplicacion = arrayMultiplicacion.indexOf(zapatillaEnCarrito.precio);
+    const eliminados = arrayMultiplicacion.splice(indiceArrayMultiplicacion);
+    const diferencia = (eliminados.reduce((a,b) => a + b));
+}
 
 function crearVisual(resultadoZapatilla) {
     let div = document.createElement("div");
@@ -141,7 +137,7 @@ function crearVisual(resultadoZapatilla) {
         e.preventDefault();
         div.remove();
         const indiceArrayCarrito = arrayCarrito.indexOf(resultadoZapatilla);
-        arrayCarrito.splice(indiceArrayCarrito,1);
-        eliminarCantidad(resultadoZapatilla, sumaTotal);
+        arrayCarrito.splice(indiceArrayCarrito);
+        eliminarCantidad(resultadoZapatilla);
     });
 }
