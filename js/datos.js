@@ -68,11 +68,11 @@ function indexDinamico(eligeMarca) {
     zapatillasFiltradas.forEach(calzado => { 
          borrador += `
                     <div id="zapatilla${calzado.id}">
-                        <img class="fotosZapatillas" src="/imagenes/${calzado.id}.png">
+                        <img src="/imagenes/${calzado.id}.png">
                         <p>${calzado.marca + calzado.nombre}</p>
-                        <br class="precio">
-                        <span>${calzado.precio}</span>
-                        <button class="botonAgregar" id="boton${calzado.id}"></button>
+                        <br class="salto">
+                        <span class="precio">${"$" + calzado.precio.toLocaleString()}</span>
+                        <button class="botonAgregar" id="boton${calzado.id}">+</button>
                     </div>
                     `
         sectionPrincipal.innerHTML = borrador;  

@@ -92,6 +92,8 @@ main {
         border: none;
         outline: none;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+        main aside ul button:hover {
+          text-shadow: 3px 2px 0px white, 3px 3px 0px white; }
 
 .grilla_inicial {
   grid-area: Section;
@@ -126,26 +128,37 @@ main {
   grid-auto-flow: dense;
   justify-content: space-evenly;
   justify-items: center;
+  margin: 7rem 0 18rem 0;
   gap: 15rem 0; }
   .grilla_marcas div {
     width: 20rem;
     height: 20rem;
     border: #000000 solid;
     border-radius: 1rem; }
+    .grilla_marcas div:hover {
+      background-position: center;
+      background-size: contain; }
     .grilla_marcas div img {
       width: 20rem;
       height: 20rem; }
+      .grilla_marcas div img:hover {
+        opacity: 0; }
     .grilla_marcas div p {
       font-family: Verdana, Geneva, Tahoma, sans-serif;
       text-align: center;
-      font-size: 1.5rem; }
+      font-size: 1.7rem;
+      margin: 1.5rem; }
     .grilla_marcas div br {
       display: none; }
-    .grilla_marcas div .precio {
+    .grilla_marcas div .salto {
       display: block;
       margin-bottom: .8rem; }
     .grilla_marcas div span {
       padding: 1rem;
+      position: relative;
+      left: 3rem;
+      bottom: 1rem;
+      font-size: 1.8rem;
       color: #FFFFFF;
       background-color: #000000;
       border-radius: 1rem;
@@ -154,7 +167,9 @@ main {
 
 .botonAgregar {
   font-size: 1.8rem;
-  margin: 0 0 0 1.5rem;
+  position: relative;
+  left: 5rem;
+  bottom: .9rem;
   border-radius: 50%;
   background-color: green;
   color: #FFFFFF;
@@ -219,7 +234,7 @@ footer {
   padding: 2rem;
   background-color: #000000c2;
   color: white;
-  position: fixed;
+  position: absolute;
   width: 25%;
   top: 1;
   right: 0; }
@@ -300,165 +315,77 @@ footer {
     background-position: center;
     width: 2rem; }
 
-/* Amidas */
-.grilla_marcas {
-  grid-area: Section;
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(3, 0.2fr);
-  grid-auto-flow: dense;
-  justify-content: space-evenly;
-  justify-items: center;
-  gap: 15rem 0; }
-  .grilla_marcas div {
-    width: 20rem;
-    height: 20rem;
-    border: #000000 solid;
-    border-radius: 1rem; }
-    .grilla_marcas div img {
-      width: 20rem;
-      height: 20rem; }
-    .grilla_marcas div p {
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-      text-align: center;
-      font-size: 1.5rem; }
-    .grilla_marcas div br {
-      display: none; }
-    .grilla_marcas div .precio {
-      display: block;
-      margin-bottom: .8rem; }
-    .grilla_marcas div span {
-      padding: 1rem;
-      color: #FFFFFF;
-      background-color: #000000;
-      border-radius: 1rem;
-      border: #646464 0.2rem solid;
-      box-shadow: 2px 2px 9px black; }
+#zapatilla1:hover {
+  background-image: url(../imagenes/amidas-1b.jpg); }
 
-.botonAgregar {
-  font-size: 1.8rem;
-  margin: 0 0 0 1.5rem;
-  border-radius: 50%;
-  background-color: green;
-  color: #FFFFFF;
-  width: 4rem;
-  height: 4rem; }
-  .botonAgregar:hover {
-    box-shadow: 2px 2px 9px black; }
+#zapatilla2:hover {
+  background-image: url(../imagenes/amidas-2b.jpg); }
 
-/* Cappa */
-.grilla_marcas2 {
-  grid-area: Section;
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: repeat(2, 0.2fr);
-  justify-content: space-evenly;
-  justify-items: center;
-  margin: 7rem 0 43rem 0; }
-  .grilla_marcas2 div {
-    width: 20rem;
-    height: 20rem;
-    border: #000000 solid;
-    border-radius: 1rem;
-    background-position: center;
-    background-size: cover; }
-  .grilla_marcas2 .cappa-1 {
-    background-image: url(../imagenes/cappa-1a.jpg); }
-    .grilla_marcas2 .cappa-1:hover {
-      background-image: url(../imagenes/cappa-1b.jpg); }
-  .grilla_marcas2 .cappa-2 {
-    background-image: url(../imagenes/cappa-2a.jpg); }
-    .grilla_marcas2 .cappa-2:hover {
-      background-image: url(../imagenes/cappa-2b.jpg); }
-  .grilla_marcas2 p {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
-    font-size: 1.5rem;
-    margin: 21rem 0 0 0; }
-  .grilla_marcas2 br {
-    display: none; }
-  .grilla_marcas2 .precio {
-    display: block;
-    margin-bottom: .8rem; }
-  .grilla_marcas2 span {
-    padding: 1rem;
-    color: #FFFFFF;
-    background-color: #000000;
-    border-radius: 1rem;
-    border: #646464 0.2rem solid;
-    box-shadow: 2px 2px 9px black; }
+#zapatilla3:hover {
+  background-image: url(../imagenes/amidas-3b.jpg); }
 
-/* Like */
-.grilla_marcas .like-1 {
-  background-image: url(../imagenes/like-1a.png); }
-  .grilla_marcas .like-1:hover {
-    background-image: url(../imagenes/like-1b.png); }
+#zapatilla4:hover {
+  background-image: url(../imagenes/amidas-4b.jpg); }
 
-.grilla_marcas .like-2 {
-  background-image: url(../imagenes/like-2a.png); }
-  .grilla_marcas .like-2:hover {
-    background-image: url(../imagenes/like-2b.png); }
+#zapatilla5:hover {
+  background-image: url(../imagenes/like-1b.png); }
 
-.grilla_marcas .like-3 {
-  background-image: url(../imagenes/like-3a.png); }
-  .grilla_marcas .like-3:hover {
-    background-image: url(../imagenes/like-3b.png); }
+#zapatilla6:hover {
+  background-image: url(../imagenes/like-2b.png); }
 
-.grilla_marcas .like-4 {
-  background-image: url(../imagenes/like-4a.png); }
-  .grilla_marcas .like-4:hover {
-    background-image: url(../imagenes/like-4b.png); }
+#zapatilla7:hover {
+  background-image: url(../imagenes/like-3b.png); }
 
-/* Phila */
-.grilla_marcas2 .phila-1 {
-  background-image: url(../imagenes/phila-1a.png); }
-  .grilla_marcas2 .phila-1:hover {
-    background-image: url(../imagenes/phila-1b.png); }
+#zapatilla8:hover {
+  background-image: url(../imagenes/like-4b.png); }
 
-.grilla_marcas2 .phila-2 {
-  background-image: url(../imagenes/phila-2a.png); }
-  .grilla_marcas2 .phila-2:hover {
-    background-image: url(../imagenes/phila-2b.png); }
+#zapatilla9:hover {
+  background-image: url(../imagenes/phila-1b.png); }
 
-/* Pluma */
-.grilla_marcas2 .pluma-1 {
-  background-image: url(../imagenes/pluma-1a.jpg); }
-  .grilla_marcas2 .pluma-1:hover {
-    background-image: url(../imagenes/pluma-1b.jpg); }
+#zapatilla10:hover {
+  background-image: url(../imagenes/phila-2b.png); }
 
-.grilla_marcas2 .pluma-2 {
-  background-image: url(../imagenes/pluma-2a.jpg); }
-  .grilla_marcas2 .pluma-2:hover {
-    background-image: url(../imagenes/pluma-2b.jpg); }
+#zapatilla11:hover {
+  background-image: url(../imagenes/pluma-1b.jpg); }
 
-/* Tupper */
-.grilla_marcas2 .tupper-1 {
-  background-image: url(../imagenes/tupper-1a.jpg); }
-  .grilla_marcas2 .tupper-1:hover {
-    background-image: url(../imagenes/tupper-1b.jpg); }
+#zapatilla12:hover {
+  background-image: url(../imagenes/pluma-2b.jpg); }
 
-.grilla_marcas2 .tupper-2 {
-  background-image: url(../imagenes/tupper-2a.jpg); }
-  .grilla_marcas2 .tupper-2:hover {
-    background-image: url(../imagenes/tupper-2b.jpg); }
+#zapatilla13:hover {
+  background-image: url(../imagenes/tupper-1b.jpg); }
+
+#zapatilla14:hover {
+  background-image: url(../imagenes/tupper-2b.jpg); }
+
+#zapatilla15:hover {
+  background-image: url(../imagenes/cappa-1b.jpg); }
+
+#zapatilla16:hover {
+  background-image: url(../imagenes/cappa-2b.jpg); }
 
 /* Media Queries */
 @media only screen and (max-width: 1680px) {
+  main aside ul {
+    margin-left: 5rem; }
   .popUpShow {
     width: 30%; } }
 
 @media only screen and (max-width: 1380px) {
+  main aside ul {
+    margin-left: 7rem; }
   .popUpShow {
     width: 40%; } }
 
 @media only screen and (max-width: 1040px) {
   main aside p {
     margin: 7rem 1rem 1rem 1rem; }
-  main aside ul li {
-    margin: 2.5rem 5rem; }
-  .zapatilla {
+  main aside ul {
+    margin-left: .5rem; }
+    main aside ul li {
+      margin: 2.5rem 5rem; }
+  .grilla_marcas div span {
     font-size: 1.6rem; }
-  .precio {
+  .grilla_marcas div p {
     font-size: 1.6rem; }
   #montoTotal {
     font-size: 1.8rem; }
@@ -479,11 +406,19 @@ footer {
       margin: 2rem auto 0rem auto; }
   .footer_iconos {
     margin: 1rem auto; }
-  .grilla_marcas2 {
+  .grilla_marcas {
     gap: 15rem 0; }
-    .grilla_marcas2 div {
+    .grilla_marcas div {
       width: 15rem;
-      height: 15rem; } }
+      height: 15rem; }
+      .grilla_marcas div img {
+        width: 15rem;
+        height: 15rem; }
+      .grilla_marcas div span {
+        font-size: 1.4rem; }
+  .botonAgregar {
+    width: 3.5rem;
+    height: 3.5rem; } }
 
 @media only screen and (max-width: 715px) {
   header h1 {
@@ -504,13 +439,11 @@ footer {
       justify-content: center;
       margin: 2rem 0 2rem 0; }
     main aside ul li {
-      margin: auto; }
+      margin: auto 2rem; }
   .grilla_inicial {
     margin: 5rem 0 4rem 0; }
   .grilla_marcas {
-    margin: 5rem 0 14rem 0; }
-  .grilla_marcas2 {
-    margin: 7rem 0 33rem 0; }
+    margin: 5rem 0 15rem 0; }
   .popUpShow {
     top: 33.8rem;
     width: 62%; } }
@@ -524,22 +457,36 @@ footer {
     align-items: center; }
     .grilla_inicial br {
       display: block; }
-  .grilla_marcas, .grilla_marcas2 {
+  .grilla_marcas {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
     margin: 4.5rem 0 14rem 0; }
-    .grilla_marcas br, .grilla_marcas2 br {
+    .grilla_marcas br {
       display: block; }
   footer p {
     font-size: 1.5rem; }
   .popUpShow {
-    width: 90.2%; } }
+    width: 88%;
+    position: fixed;
+    z-index: 1; } }
 
 @media only screen and (max-width: 390px) {
   header h1 {
     font-size: 6rem; }
   header .carrito button {
     font-size: 1.6rem; }
+  main aside ul {
+    margin-left: 1.5rem; }
+    main aside ul .primera_div {
+      margin: 1rem 0 0 0; }
+    main aside ul .segunda_div {
+      margin: 2rem 0 2rem 0; }
+    main aside ul li {
+      margin: auto 1.8rem; }
+  .grilla_marcas {
+    margin: 4.5rem 0 15rem 0; }
+  .popUpShow {
+    width: 87%; }
   .footer_iconos {
     flex-flow: column wrap; } }

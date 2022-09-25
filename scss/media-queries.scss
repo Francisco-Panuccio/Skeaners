@@ -1,12 +1,28 @@
 /* Media Queries */
 
 @media only screen and (max-width: 1680px) {
+    main {
+        aside {
+            ul {
+                margin-left: 5rem;
+            }
+        }
+    }
+
     .popUpShow {
         width: 30%;
     }
 }
 
 @media only screen and (max-width: 1380px) {
+    main {
+        aside {
+            ul {
+                margin-left: 7rem;
+            }
+        }
+    }
+    
     .popUpShow {
         width: 40%;
     }
@@ -19,19 +35,23 @@
                 margin: 7rem 1rem 1rem 1rem;
             }
             ul {
-                li {
-                    margin: 2.5rem 5rem;
-                }
+                margin-left: .5rem;
+                    li {
+                        margin: 2.5rem 5rem;
+                    }
             }
         }
     }
 
-    .zapatilla {
-        font-size: 1.6rem;
-    }
-
-    .precio {
-        font-size: 1.6rem;
+    .grilla_marcas {
+        div {
+            span {
+                font-size: 1.6rem;
+            }
+            p {
+                font-size: 1.6rem;
+            }
+        }
     }
 
     #montoTotal {
@@ -55,6 +75,7 @@
             }
         }
     }
+
     .grilla_inicial {
             img {
                 width: 15rem;
@@ -73,15 +94,24 @@
         margin: 1rem auto;
     }
 
-    .grilla_marcas2 {
+    .grilla_marcas {
         gap: 15rem 0;
         div {
             width: 15rem;
             height: 15rem;
-                p {
-                    
+                img {
+                    width: 15rem;
+                    height: 15rem;
+                }
+                span {
+                    font-size: 1.4rem;
                 }
         }
+    }
+
+    .botonAgregar {
+        width: 3.5rem;
+        height: 3.5rem;
     }
 }
 
@@ -113,7 +143,7 @@
                         margin: 2rem 0 2rem 0;
                     }
                         li {
-                            margin: auto;
+                            margin: auto 2rem;
                         }
                 }
             }
@@ -124,11 +154,7 @@
     }
 
     .grilla_marcas {
-        margin: 5rem 0 14rem 0;
-    }
-
-    .grilla_marcas2 {
-        margin: 7rem 0 33rem 0;
+        margin: 5rem 0 15rem 0;
     }
 
     .popUpShow {
@@ -153,7 +179,7 @@
             }
     }
 
-    .grilla_marcas, .grilla_marcas2 {
+    .grilla_marcas {
         display: flex;
         flex-flow: column wrap;
         align-items: center;
@@ -170,7 +196,9 @@
     }
 
     .popUpShow {
-        width: 90.2%;
+        width: 88%;
+        position: fixed;
+        z-index: 1;
     }
 }
 
@@ -184,6 +212,31 @@
                 font-size: 1.6rem;
             }
         }
+    }
+
+    main {
+            aside {
+                ul {
+                    margin-left: 1.5rem;
+                    .primera_div {
+                        margin: 1rem 0 0 0;
+                    }
+                    .segunda_div {
+                        margin: 2rem 0 2rem 0;
+                    }
+                        li {
+                            margin: auto 1.8rem;
+                        }
+                }
+            }
+    }
+
+    .grilla_marcas {
+        margin: 4.5rem 0 15rem 0;
+    }
+
+    .popUpShow {
+        width: 87%;
     }
 
     .footer_iconos {
