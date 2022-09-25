@@ -1,22 +1,3 @@
-/* Sucursales */
-
-class Sucursales {
-    constructor(id, provincia, ciudad, direccion){
-        this.id = id;
-        this.provincia = provincia;
-        this.ciudad = ciudad;
-        this.direccion = direccion;
-    }
-}
-
-const lanus = new Sucursales(1, "Buenos Aires", "Lanus", "25 de Mayo al 150");
-const avellaneda = new Sucursales(2, "Buenos Aires", "Avellaneda", "Alsina al 122");
-const quilmes = new Sucursales(3, "Buenos Aires", "Quilmes", "Alvear al 557");
-const pompeya = new Sucursales(4, "Buenos Aires", "Nueva Pompeya", "Av. Sáenz al 1200");
-const carlos_paz = new Sucursales(5, "Cordoba", "Villa Carlos Paz", "Las Heras al 280");
-
-const arraySucursales = [lanus, avellaneda, quilmes, pompeya, carlos_paz];
-
 /* Zapatillas */
 
 class Zapatilla {
@@ -60,11 +41,31 @@ const pluma = document.getElementById("pluma");
 const tupper = document.getElementById("tupper");
 const mainPrincipal = document.getElementById("mainPrincipal");
 
+const sectionPrincipal = document.createElement("section");
+mainPrincipal.appendChild(sectionPrincipal);
+
+function indexPrincipal() {
+    sectionPrincipal.className = ("grilla_inicial");
+    let principal = "";
+    principal += `
+                <div><img src="./imagenes/1.png" alt="Amidas VS Pace"><p>Amidas VS Pace</p></div>
+                <div><img src="./imagenes/2.png" alt="Amidas Grand Court"><p>Amidas Grand Court</p></div>
+                <div><img src="./imagenes/5.png" alt="Like SB Zoom Blazer Low Pro"><p>Like SB Zoom <br class="br_especial"> Blazer Low Pro GT</p></div>
+                <div><img src="./imagenes/6.png" alt="Like SB Force 58 Premium"><p>Like SB Force <br> 58 Premium</p></div>
+                <div><img src="./imagenes/9.png" alt="Phila Trend"><p>Phila Trend</p></div>
+                <div><img src="./imagenes/11.png" alt="Pluma Pro Classic"><p>Pluma Pro Classic</p></div>
+                <div><img src="./imagenes/15.png" alt="Cappa Logo Asti"><p>Cappa Logo Asti</p></div>
+                <div><img src="./imagenes/13.png" alt="Tupper Drive"><p>Tupper Drive</p></div>
+                <div><img src="./imagenes/14.png" alt="Tupper Ultralight II Mesh"><p>Tupper Ultralight <br> II Mesh</p></div>
+                `
+    sectionPrincipal.innerHTML = principal;
+}       
+
 function indexDinamico(eligeMarca) {
-    const resultadoIndex = arrayZapatillas.filter(el => el.marca.includes(eligeMarca));
+    const zapatillasFiltradas = arrayZapatillas.filter(el => el.marca.includes(eligeMarca));
     sectionPrincipal.className = ("grilla_marcas");
     let borrador = "";
-    resultadoIndex.forEach(calzado => { 
+    zapatillasFiltradas.forEach(calzado => { 
          borrador += `
                     <div id="zapatilla${calzado.id}">
                         <img class="fotosZapatillas" src="/imagenes/${calzado.id}.png">
@@ -74,27 +75,60 @@ function indexDinamico(eligeMarca) {
                         <button class="botonAgregar" id="boton${calzado.id}"></button>
                     </div>
                     `
-    })
-    sectionPrincipal.innerHTML = borrador;
+        sectionPrincipal.innerHTML = borrador;  
+        const botonCantidad = document.getElementById(`boton${calzado.id}`);
+        botonCantidad.addEventListener("click", () => {
+            divMain.className = "popUpShow";
+            agregarAlCarrito(calzado.id);
+        })
+    }) 
 }
 
-const sectionPrincipal = document.createElement("section");
-sectionPrincipal.className = ("grilla_inicial");
-let principal = "";
-principal += `
-            <div><img src="./imagenes/1.png" alt="Amidas VS Pace"><p>Amidas VS Pace</p></div>
-            <div><img src="./imagenes/2.png" alt="Amidas Grand Court"><p>Amidas Grand Court</p></div>
-            <div><img src="./imagenes/5.png" alt="Like SB Zoom Blazer Low Pro"><p>Like SB Zoom <br class="br_especial"> Blazer Low Pro GT</p></div>
-            <div><img src="./imagenes/6.png" alt="Like SB Force 58 Premium"><p>Like SB Force <br> 58 Premium</p></div>
-            <div><img src="./imagenes/9.png" alt="Phila Trend"><p>Phila Trend</p></div>
-            <div><img src="./imagenes/11.png" alt="Pluma Pro Classic"><p>Pluma Pro Classic</p></div>
-            <div><img src="./imagenes/15.png" alt="Cappa Logo Asti"><p>Cappa Logo Asti</p></div>
-            <div><img src="./imagenes/13.png" alt="Tupper Drive"><p>Tupper Drive</p></div>
-            <div><img src="./imagenes/14.png" alt="Tupper Ultralight II Mesh"><p>Tupper Ultralight <br> II Mesh</p></div>
-            `
-sectionPrincipal.innerHTML = principal;
-mainPrincipal.appendChild(sectionPrincipal);
+function crearVisualCarrito(buscarZapatilla) {
+    let div = document.createElement("div");
+    div.className = "popUp2";
+    div.innerHTML = `
+                    <p class="zapatilla">${buscarZapatilla.marca + buscarZapatilla.nombre}</p>
+                    <p class="precio" id="precio">${"$" + buscarZapatilla.precio.toLocaleString()}</p>
+                    <input type="number" min=1 max=10 readonly value=1 class="cantidad">${buscarZapatilla.cantidad}
+                    <button onClick = "botonEliminar(${buscarZapatilla.id})" class="eliminar"><img src = "../imagenes/bin.png"></button>
+                    `
+    divMain.prepend(div);
+    calcularTotal();
+}
 
+function botonEliminar() {
+    const hallarZapatilla = arrayCarrito.find(producto => producto.id === id);
+    arrayCarrito.splice(arrayCarrito.indexOf(hallarZapatilla),1);
+    crearVisualCarrito(buscarZapatilla);
+}
+
+function calcularTotal() {
+    let total = 0;
+    arrayCarrito.forEach(calzado => {
+        total += arrayCarrito.precio * arrayCarrito.cantidad;
+    })
+    totalFinal.innerHTML = total;
+}
+
+function agregarAlCarrito(id) {
+    const buscarZapatilla = arrayZapatillas.find(busc => busc.id === id);
+    const zapatillasEnCarrito = arrayCarrito.find(busc => busc.id === id);
+    if(zapatillasEnCarrito) {
+        zapatillasEnCarrito.cantidad++;
+    }
+    else {
+        arrayCarrito.push(buscarZapatilla);
+        crearVisualCarrito(buscarZapatilla);
+    }
+}
+
+indexPrincipal();
+
+home.addEventListener("click", (e) => {
+    e.preventDefault();
+    indexPrincipal();
+});
 
 amida.addEventListener("click", (e) => {
     e.preventDefault();
@@ -127,3 +161,18 @@ tupper.addEventListener("click", (e) => {
 });
 
 /* Carrito */
+
+let divMain = document.querySelector(".popUp");
+let botonCompraOn = document.getElementById("carritoCompra");
+let botonCompraOff = document.getElementById("botonOff");
+const totalCompra = document.getElementById("totalFinal");
+
+botonCompraOn.addEventListener("click", (e) => {
+    e.preventDefault();
+    divMain.classList.toggle("popUpShow");
+});
+
+botonCompraOff.addEventListener("click", (e) => {
+    e.preventDefault();
+    divMain.className = "popUp";
+});
