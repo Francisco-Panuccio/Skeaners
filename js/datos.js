@@ -72,55 +72,59 @@ function indexDinamico(eligeMarca) {
                         <p>${calzado.marca + calzado.nombre}</p>
                         <br class="salto">
                         <span class="precio">${"$" + calzado.precio.toLocaleString()}</span>
-                        <button class="botonAgregar" id="boton${calzado.id}">+</button>
+                        <button class="botonAgregar" id="${calzado.id}">+</button>
                     </div>
                     `
         sectionPrincipal.innerHTML = borrador;  
-        const botonCantidad = document.getElementById(`boton${calzado.id}`);
-        botonCantidad.addEventListener("click", () => {
+    });
+    const botonesCantidad = document.querySelectorAll(".botonAgregar");
+    for(const botonCantidad of botonesCantidad) {
+        botonCantidad.addEventListener("click", (e) => {
             divMain.className = "popUpShow";
-            agregarAlCarrito(calzado.id);
+            const identificador = zapatillasFiltradas.find(busc => busc.id == botonCantidad.id);
+            agregarAlCarrito(identificador);
         })
-    }) 
+    }
 }
 
-function crearVisualCarrito(buscarZapatilla) {
+function crearVisualCarrito(identificador) {
     let div = document.createElement("div");
     div.className = "popUp2";
     div.innerHTML = `
-                    <p class="zapatilla">${buscarZapatilla.marca + buscarZapatilla.nombre}</p>
-                    <p class="precio" id="precio">${"$" + buscarZapatilla.precio.toLocaleString()}</p>
-                    <input type="number" min=1 max=10 readonly value=1 class="cantidad">${buscarZapatilla.cantidad}
-                    <button onClick = "botonEliminar(${buscarZapatilla.id})" class="eliminar"><img src = "../imagenes/bin.png"></button>
+                    <p class="zapatilla">${identificador.marca + identificador.nombre}</p>
+                    <p class="precio" id="precio">${"$" + identificador.precio.toLocaleString()}</p>
+                    <input type="number" readonly value=${identificador.cantidad} class="cantidad">
                     `
+    let botonEliminar = document.createElement("button");
+    botonEliminar.className = "eliminar";
+    botonEliminar.innerHTML = `<img src = "../imagenes/bin.png">`
+    div.appendChild(botonEliminar);
     divMain.prepend(div);
+    botonEliminar.addEventListener("click", () => {
+        div.remove();
+        const indiceArrayClientes = arrayCarrito.indexOf(identificador);
+        arrayCarrito.splice(indiceArrayClientes,1);
+    })
     calcularTotal();
 }
 
-function botonEliminar() {
-    const hallarZapatilla = arrayCarrito.find(producto => producto.id === id);
-    arrayCarrito.splice(arrayCarrito.indexOf(hallarZapatilla),1);
-    crearVisualCarrito(buscarZapatilla);
+function agregarAlCarrito(identificador) {
+    const zapatillasEnCarrito = arrayCarrito.find((zap) => zap.id == identificador.id);
+    if(zapatillasEnCarrito) {
+        identificador.cantidad++;
+    }
+    else {
+        arrayCarrito.push(identificador);
+    }
+    crearVisualCarrito(identificador);
 }
 
 function calcularTotal() {
     let total = 0;
     arrayCarrito.forEach(calzado => {
-        total += arrayCarrito.precio * arrayCarrito.cantidad;
+        total += calzado.precio * calzado.cantidad;
     })
-    totalFinal.innerHTML = total;
-}
-
-function agregarAlCarrito(id) {
-    const buscarZapatilla = arrayZapatillas.find(busc => busc.id === id);
-    const zapatillasEnCarrito = arrayCarrito.find(busc => busc.id === id);
-    if(zapatillasEnCarrito) {
-        zapatillasEnCarrito.cantidad++;
-    }
-    else {
-        arrayCarrito.push(buscarZapatilla);
-        crearVisualCarrito(buscarZapatilla);
-    }
+    totalFinal.innerHTML = "$" + total.toLocaleString();
 }
 
 indexPrincipal();
