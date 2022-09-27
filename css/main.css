@@ -138,11 +138,11 @@ main {
     .grilla_marcas div:hover {
       background-position: center;
       background-size: contain; }
+      .grilla_marcas div:hover .imagenesZap {
+        opacity: 0; }
     .grilla_marcas div img {
       width: 20rem;
       height: 20rem; }
-      .grilla_marcas div img:hover {
-        opacity: 0; }
     .grilla_marcas div p {
       font-family: Verdana, Geneva, Tahoma, sans-serif;
       text-align: center;

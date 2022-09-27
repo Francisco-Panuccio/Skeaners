@@ -68,7 +68,7 @@ function indexDinamico(eligeMarca) {
     zapatillasFiltradas.forEach(calzado => { 
          borrador += `
                     <div id="zapatilla${calzado.id}">
-                        <img src="/imagenes/${calzado.id}.png">
+                        <img src="/imagenes/${calzado.id}.png" class="imagenesZap">
                         <p>${calzado.marca + calzado.nombre}</p>
                         <br class="salto">
                         <span class="precio">${"$" + calzado.precio.toLocaleString()}</span>
@@ -93,7 +93,7 @@ function crearVisualCarrito(identificador) {
     div.innerHTML = `
                     <p class="zapatilla">${identificador.marca + identificador.nombre}</p>
                     <p class="precio" id="precio">${"$" + identificador.precio.toLocaleString()}</p>
-                    <input type="number" readonly value=${identificador.cantidad} class="cantidad">
+                    <input type="number" readonly value=${identificador.cantidad} class="cantidad" id="inputCantidad">
                     `
     let botonEliminar = document.createElement("button");
     botonEliminar.className = "eliminar";
@@ -104,6 +104,7 @@ function crearVisualCarrito(identificador) {
         div.remove();
         const indiceArrayClientes = arrayCarrito.indexOf(identificador);
         arrayCarrito.splice(indiceArrayClientes,1);
+        calcularTotal();
     })
     calcularTotal();
 }
@@ -112,11 +113,17 @@ function agregarAlCarrito(identificador) {
     const zapatillasEnCarrito = arrayCarrito.find((zap) => zap.id == identificador.id);
     if(zapatillasEnCarrito) {
         identificador.cantidad++;
+        const input = document.getElementById("inputCantidad");
+        input.value++;
+        calcularTotal();
     }
     else {
         arrayCarrito.push(identificador);
+        for(const zapatillas of arrayCarrito) {
+            localStorage.setItem("Zapatillas", JSON.stringify(zapatillas));
+        }
+        crearVisualCarrito(identificador);
     }
-    crearVisualCarrito(identificador);
 }
 
 function calcularTotal() {
@@ -128,6 +135,14 @@ function calcularTotal() {
 }
 
 indexPrincipal();
+/* let compra;
+let compraPrevia = JSON.stringify(localStorage.getItem("compra"));
+if(compraPrevia) {
+    compra = compraPrevia;
+}else {
+
+} */
+JSON.parse(localStorage.getItem("Zapatillas"));
 
 home.addEventListener("click", (e) => {
     e.preventDefault();

@@ -176,13 +176,11 @@ main {
                 &:hover {
                     background-position: center;
                     background-size: contain;
+                    .imagenesZap {opacity: 0;}
                 }
                 img {
                     width: 20rem;
                     height: 20rem;
-                        &:hover {
-                            opacity: 0;
-                        }
                 }
                 p {
                     font-family: Verdana, Geneva, Tahoma, sans-serif;
