@@ -119,11 +119,9 @@ function agregarAlCarrito(identificador) {
     }
     else {
         arrayCarrito.push(identificador);
-        for(const zapatillas of arrayCarrito) {
-            localStorage.setItem("Zapatillas", JSON.stringify(zapatillas));
-        }
         crearVisualCarrito(identificador);
     }
+    localStorage.setItem("Zapatillas", JSON.stringify(arrayCarrito));
 }
 
 function calcularTotal() {
@@ -135,14 +133,8 @@ function calcularTotal() {
 }
 
 indexPrincipal();
-/* let compra;
-let compraPrevia = JSON.stringify(localStorage.getItem("compra"));
-if(compraPrevia) {
-    compra = compraPrevia;
-}else {
-
-} */
-JSON.parse(localStorage.getItem("Zapatillas"));
+let compra = localStorage.setItem("Zapatillas", JSON.stringify(arrayCarrito));
+compra == true ? JSON.parse(localStorage.getItem("Zapatillas")) : arrayCarrito = [];
 
 home.addEventListener("click", (e) => {
     e.preventDefault();
