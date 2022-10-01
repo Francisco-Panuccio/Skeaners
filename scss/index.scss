@@ -1,6 +1,6 @@
-$color-principal: #FFFFFF;
-$color-secundario: #ffda6c;
-$color-terciario: #646464;
+$color-principal: #ecf0f1;
+$color-secundario: #EEC643;
+$color-terciario: #141414;
 
 *{
     margin: 0;
@@ -17,6 +17,10 @@ body {
 
 a {
     text-decoration: none;
+    outline: none;
+        &:hover {
+            color: $color-secundario;
+        }
 }
 
 /* Header */
@@ -28,6 +32,7 @@ header {
     align-items: center;
     background-color: $color-terciario;
     height: 17rem;
+    border-bottom: .5rem solid $color-secundario;
         h1 {   
             margin: auto;
             font-size: 8rem;
@@ -46,7 +51,8 @@ header {
                             align-items: center;
                             font-size: 1.8rem;
                             text-align: center;
-                            margin-top: 1.7rem;
+                            font-weight: 600;
+                            margin-top: 3.6rem;
                             background-color: $color-secundario;
                             border-radius: 1rem;
                             color: black;
@@ -79,16 +85,18 @@ main {
             display: flex;
             flex-flow: column wrap;
             align-content: center;
+            border-right: .3rem solid $color-terciario;
             background-color: $color-secundario;
                 p {
                     font-size: 3.5rem;
-                    margin: 7rem 0 1rem 0;
+                    margin: 14rem 0 1rem 0;
                     text-align: center;
                     font-weight: 600;
+                    text-decoration: underline;
                     font-family: 'Courier New', Courier, monospace;
                 }
                 ul {
-                    margin-left: 3rem;
+                    margin: 0 0 0 3rem;
                         li {
                             margin: 2.5rem 0;
                             width: fit-content;
@@ -115,13 +123,16 @@ main {
                             list-style:url(../iconos/home.svg);
                         }
                             button {
-                                font-size: 2rem;
+                                font-size: 1.8rem;
                                 background: transparent;
                                 border: none;
                                 outline: none;
-                                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                                font-weight: 600;
+                                font-family: 'Montserrat', sans-serif;
+                                padding-left: 1rem;
                                     &:hover {
                                         text-shadow: 3px 2px 0px rgba(255, 255, 255, 1), 3px 3px 0px rgba(255, 255, 255, 1);
+                                        text-decoration: underline overline;
                                     }
                             }
                 }
@@ -146,9 +157,10 @@ main {
         }
         p {
             margin-top: 2rem;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 600;
+            font-family: 'Titillium Web', sans-serif;
             text-align: center;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
         }
         .br_especial {
             display: inherit;
@@ -183,15 +195,13 @@ main {
                     height: 20rem;
                 }
                 p {
-                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                    font-weight: 600;
+                    font-family: 'Titillium Web', sans-serif;
                     text-align: center;
-                    font-size: 1.7rem;
+                    font-size: 1.8rem;
                     margin: 1.5rem;
                 }
                 br {
-                    display: none;
-                } 
-                .salto {
                         display: block;
                         margin-bottom: .8rem;
                 }
@@ -231,6 +241,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    border-top: .5rem solid $color-secundario;
     background-color: $color-terciario;
         p {
             font-size: 1.8rem;
@@ -297,6 +308,7 @@ footer {
     width: 25%;
     top: 1;
     right: 0;
+    z-index: 10;
 }
 
 .popUp2 {
@@ -386,4 +398,24 @@ footer {
             background-position: center;
             width: 2rem;
         }
+}
+
+.notificar {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.4rem;
+    width: 30rem;
+    background: linear-gradient(90deg, rgba(255,0,0,0.8869748583026961) 0%, rgba(227,42,42,1) 25%, rgba(199,57,57,1) 50%, rgba(223,109,109,1) 75%, rgba(228,137,137,1) 100%);
+}
+
+.notificar2 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.4rem;
+    width: 30rem;
+    background: linear-gradient(90deg, rgba(3,69,1,1) 0%, rgba(29,116,23,0.9457983877144608) 25%, rgba(5,105,1,0.9177871832326681) 50%, rgba(21,195,15,0.7189076314119398) 75%, rgba(40,217,42,0.48081239331670167) 100%);
+}
+
+.swal2-popup {
+    font-size: 1.5rem;
 }

@@ -44,10 +44,11 @@
 }
 
 #zapatilla8 {
-    &:hover {
-        background-image: url(../imagenes/like-4b.png);
-        background-size: cover;
-    }
+    margin-top: 1.6rem;
+        &:hover {
+            background-image: url(../imagenes/like-4b.png);
+            background-size: cover;
+        }
 }
 
 #zapatilla9 {

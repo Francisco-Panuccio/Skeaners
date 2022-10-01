@@ -26,6 +26,10 @@
     .popUpShow {
         width: 40%;
     }
+
+    .swal2-popup {
+        font-size: 1.3rem;
+    }
 }
 
 @media only screen and (max-width: 1040px) {
@@ -113,6 +117,10 @@
         width: 3.5rem;
         height: 3.5rem;
     }
+
+    .swal2-popup {
+        font-size: 1.2rem;
+    }
 }
 
 @media only screen and (max-width: 715px) {
@@ -126,26 +134,28 @@
         display: flex;
         flex-flow: column wrap;
             aside {
-                p {
-                    margin: 2rem auto 1rem auto;
-                }
-                ul {
-                    .primera_div {
-                        display: flex;
-                        flex-wrap: wrap;
-                        justify-content: center;
-                        margin: 1rem 0 0 0;
+                border-right: none;
+                border-bottom: .3rem solid $color-terciario;
+                    p {
+                        margin: 2rem auto 1rem auto;
                     }
-                    .segunda_div {
-                        display: flex;
-                        flex-wrap: wrap;
-                        justify-content: center;
-                        margin: 2rem 0 2rem 0;
-                    }
-                        li {
-                            margin: auto 2rem;
+                    ul {
+                        .primera_div {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: center;
+                            margin: 1rem 0 0 0;
                         }
-                }
+                        .segunda_div {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: center;
+                            margin: 2rem 0 2rem 0;
+                        }
+                            li {
+                                margin: auto 2rem;
+                            }
+                    }
             }
     }
 
@@ -154,11 +164,14 @@
     }
 
     .grilla_marcas {
-        margin: 5rem 0 15rem 0;
+        margin: 4rem 0 15.5rem 0;
+            #zapatilla8 {
+                margin-bottom: 2.5rem;
+            }
     }
 
     .popUpShow {
-        top: 33.8rem;
+        top: 36.1rem;
         width: 62%;
     }
 }    
@@ -174,18 +187,34 @@
         display: flex;
         flex-flow: column wrap;
         align-items: center;
-            br {
-                display: block;
-            }
     }
 
     .grilla_marcas {
         display: flex;
         flex-flow: column wrap;
         align-items: center;
-        margin: 4.5rem 0 14rem 0;
-            br {
-                display: block;
+            #zapatilla1, #zapatilla10 {
+                span {
+                    margin: 0;
+                }
+            }
+            #zapatilla5 {
+                margin-bottom: 3rem;
+            }
+            #zapatilla7 {
+                margin-top: 1rem;
+                    span {
+                        margin-bottom: 0;
+                    }
+            }
+            #zapatilla8 {
+                margin-top: 0;
+                    span {
+                        margin: 0;
+                    }
+            }
+            #zapatilla14 {
+                margin-bottom: 2.5rem;
             }
     }
 
@@ -217,15 +246,22 @@
     main {
             aside {
                 ul {
-                    margin-left: 1.5rem;
+                    padding: 0;
+                    margin-left: 1.2rem;
                     .primera_div {
                         margin: 1rem 0 0 0;
                     }
                     .segunda_div {
-                        margin: 2rem 0 2rem 0;
+                        margin: 1.2rem 0 2rem 0;
                     }
                         li {
                             margin: auto 1.8rem;
+                                button {
+                                    font-size: 1.5rem;
+                                }
+                                #like {
+                                    margin: 1.5rem 1rem 0 0;
+                                }
                         }
                 }
             }
@@ -236,10 +272,19 @@
     }
 
     .popUpShow {
+        top: 38.7rem;
         width: 87%;
     }
 
     .footer_iconos {
         flex-flow: column wrap;
+    }
+
+    .notificar,.notificar2 {
+        font-size: 1.2rem;
+    }
+
+    .swal2-popup {
+        font-size: 1rem;
     }
 }

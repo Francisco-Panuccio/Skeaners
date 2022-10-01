@@ -6,10 +6,13 @@ html {
   font-size: 62.5%; }
 
 body {
-  background-color: #646464; }
+  background-color: #141414; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  outline: none; }
+  a:hover {
+    color: #EEC643; }
 
 /* Header */
 header {
@@ -17,14 +20,15 @@ header {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: #646464;
-  height: 17rem; }
+  background-color: #141414;
+  height: 17rem;
+  border-bottom: 0.5rem solid #EEC643; }
   header h1 {
     margin: auto;
     font-size: 8rem;
     letter-spacing: 2rem; }
     header h1 a {
-      color: #ffda6c; }
+      color: #EEC643; }
   header nav {
     margin: 0 6rem 0 0; }
     header nav ul {
@@ -35,8 +39,9 @@ header {
         align-items: center;
         font-size: 1.8rem;
         text-align: center;
-        margin-top: 1.7rem;
-        background-color: #ffda6c;
+        font-weight: 600;
+        margin-top: 3.6rem;
+        background-color: #EEC643;
         border-radius: 1rem;
         color: black;
         padding: 1rem;
@@ -54,21 +59,23 @@ main {
   grid-template-columns: 0.4fr 1.6fr;
   grid-template-rows: 1fr;
   grid-template-areas: "Aside Section";
-  background-color: #FFFFFF; }
+  background-color: #ecf0f1; }
   main aside {
     grid-area: Aside;
     display: flex;
     flex-flow: column wrap;
     align-content: center;
-    background-color: #ffda6c; }
+    border-right: 0.3rem solid #141414;
+    background-color: #EEC643; }
     main aside p {
       font-size: 3.5rem;
-      margin: 7rem 0 1rem 0;
+      margin: 14rem 0 1rem 0;
       text-align: center;
       font-weight: 600;
+      text-decoration: underline;
       font-family: 'Courier New', Courier, monospace; }
     main aside ul {
-      margin-left: 3rem; }
+      margin: 0 0 0 3rem; }
       main aside ul li {
         margin: 2.5rem 0;
         width: fit-content; }
@@ -87,13 +94,16 @@ main {
       main aside ul .home {
         list-style: url(../iconos/home.svg); }
       main aside ul button {
-        font-size: 2rem;
+        font-size: 1.8rem;
         background: transparent;
         border: none;
         outline: none;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+        font-weight: 600;
+        font-family: 'Montserrat', sans-serif;
+        padding-left: 1rem; }
         main aside ul button:hover {
-          text-shadow: 3px 2px 0px white, 3px 3px 0px white; }
+          text-shadow: 3px 2px 0px white, 3px 3px 0px white;
+          text-decoration: underline overline; }
 
 .grilla_inicial {
   grid-area: Section;
@@ -112,9 +122,10 @@ main {
     border-radius: 1rem; }
   .grilla_inicial p {
     margin-top: 2rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    font-family: 'Titillium Web', sans-serif;
     text-align: center;
-    font-size: 1.5rem; }
+    font-size: 1.8rem; }
   .grilla_inicial .br_especial {
     display: inherit; }
   .grilla_inicial br {
@@ -144,13 +155,12 @@ main {
       width: 20rem;
       height: 20rem; }
     .grilla_marcas div p {
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-weight: 600;
+      font-family: 'Titillium Web', sans-serif;
       text-align: center;
-      font-size: 1.7rem;
+      font-size: 1.8rem;
       margin: 1.5rem; }
     .grilla_marcas div br {
-      display: none; }
-    .grilla_marcas div .salto {
       display: block;
       margin-bottom: .8rem; }
     .grilla_marcas div span {
@@ -159,10 +169,10 @@ main {
       left: 3rem;
       bottom: 1rem;
       font-size: 1.8rem;
-      color: #FFFFFF;
+      color: #ecf0f1;
       background-color: #000000;
       border-radius: 1rem;
-      border: #646464 0.2rem solid;
+      border: #141414 0.2rem solid;
       box-shadow: 2px 2px 9px black; }
 
 .botonAgregar {
@@ -172,7 +182,7 @@ main {
   bottom: .9rem;
   border-radius: 50%;
   background-color: green;
-  color: #FFFFFF;
+  color: #ecf0f1;
   width: 4rem;
   height: 4rem; }
   .botonAgregar:hover {
@@ -183,12 +193,13 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: #646464; }
+  border-top: 0.5rem solid #EEC643;
+  background-color: #141414; }
   footer p {
     font-size: 1.8rem;
     font-weight: 600;
     text-align: center;
-    color: #FFFFFF;
+    color: #ecf0f1;
     margin: auto 0 auto 6rem;
     text-decoration: underline; }
 
@@ -204,11 +215,11 @@ footer {
     align-items: center;
     margin: 0 2rem; }
     .footer_iconos li a span {
-      border: 0.2rem solid #FFFFFF;
+      border: 0.2rem solid #ecf0f1;
       font-size: 1.3rem;
       font-family: 'Oxanium', sans-serif;
       font-weight: 600;
-      color: #FFFFFF;
+      color: #ecf0f1;
       padding: 0.3rem;
       border-radius: 10px; }
     .footer_iconos li a img {
@@ -237,7 +248,8 @@ footer {
   position: absolute;
   width: 25%;
   top: 1;
-  right: 0; }
+  right: 0;
+  z-index: 10; }
 
 .popUp2 {
   display: grid;
@@ -261,7 +273,7 @@ footer {
   font-weight: bold;
   margin: .5rem 0;
   color: green;
-  background-color: #FFFFFF;
+  background-color: #ecf0f1;
   border-radius: 1rem;
   padding: .3rem;
   text-align: center; }
@@ -299,7 +311,7 @@ footer {
   #botonCompra:hover {
     box-shadow: 2px 2px 9px #FFFFFF;
     border: 0.2rem solid #FFFFFF;
-    background-color: #FFFFFF; }
+    background-color: #ecf0f1; }
 
 #botonOff {
   width: 3rem;
@@ -314,6 +326,23 @@ footer {
     margin-top: .2rem;
     background-position: center;
     width: 2rem; }
+
+.notificar {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.4rem;
+  width: 30rem;
+  background: linear-gradient(90deg, rgba(255, 0, 0, 0.886975) 0%, #e32a2a 25%, #c73939 50%, #df6d6d 75%, #e48989 100%); }
+
+.notificar2 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.4rem;
+  width: 30rem;
+  background: linear-gradient(90deg, #034501 0%, rgba(29, 116, 23, 0.945798) 25%, rgba(5, 105, 1, 0.917787) 50%, rgba(21, 195, 15, 0.718908) 75%, rgba(40, 217, 42, 0.480812) 100%); }
+
+.swal2-popup {
+  font-size: 1.5rem; }
 
 #zapatilla1:hover {
   background-image: url(../imagenes/amidas-1b.jpg); }
@@ -339,9 +368,11 @@ footer {
   background-image: url(../imagenes/like-3b.png);
   background-size: cover; }
 
-#zapatilla8:hover {
-  background-image: url(../imagenes/like-4b.png);
-  background-size: cover; }
+#zapatilla8 {
+  margin-top: 1.6rem; }
+  #zapatilla8:hover {
+    background-image: url(../imagenes/like-4b.png);
+    background-size: cover; }
 
 #zapatilla9:hover {
   background-image: url(../imagenes/phila-1b.png); }
@@ -378,7 +409,9 @@ footer {
   main aside ul {
     margin-left: 7rem; }
   .popUpShow {
-    width: 40%; } }
+    width: 40%; }
+  .swal2-popup {
+    font-size: 1.3rem; } }
 
 @media only screen and (max-width: 1040px) {
   main aside p {
@@ -422,7 +455,9 @@ footer {
         font-size: 1.4rem; }
   .botonAgregar {
     width: 3.5rem;
-    height: 3.5rem; } }
+    height: 3.5rem; }
+  .swal2-popup {
+    font-size: 1.2rem; } }
 
 @media only screen and (max-width: 715px) {
   header h1 {
@@ -430,26 +465,31 @@ footer {
   main {
     display: flex;
     flex-flow: column wrap; }
-    main aside p {
-      margin: 2rem auto 1rem auto; }
-    main aside ul .primera_div {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin: 1rem 0 0 0; }
-    main aside ul .segunda_div {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin: 2rem 0 2rem 0; }
-    main aside ul li {
-      margin: auto 2rem; }
+    main aside {
+      border-right: none;
+      border-bottom: 0.3rem solid #141414; }
+      main aside p {
+        margin: 2rem auto 1rem auto; }
+      main aside ul .primera_div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 1rem 0 0 0; }
+      main aside ul .segunda_div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 2rem 0 2rem 0; }
+      main aside ul li {
+        margin: auto 2rem; }
   .grilla_inicial {
     margin: 5rem 0 4rem 0; }
   .grilla_marcas {
-    margin: 5rem 0 15rem 0; }
+    margin: 4rem 0 15.5rem 0; }
+    .grilla_marcas #zapatilla8 {
+      margin-bottom: 2.5rem; }
   .popUpShow {
-    top: 33.8rem;
+    top: 36.1rem;
     width: 62%; } }
 
 @media only screen and (max-width: 591px) {
@@ -459,15 +499,24 @@ footer {
     display: flex;
     flex-flow: column wrap;
     align-items: center; }
-    .grilla_inicial br {
-      display: block; }
   .grilla_marcas {
     display: flex;
     flex-flow: column wrap;
-    align-items: center;
-    margin: 4.5rem 0 14rem 0; }
-    .grilla_marcas br {
-      display: block; }
+    align-items: center; }
+    .grilla_marcas #zapatilla1 span, .grilla_marcas #zapatilla10 span {
+      margin: 0; }
+    .grilla_marcas #zapatilla5 {
+      margin-bottom: 3rem; }
+    .grilla_marcas #zapatilla7 {
+      margin-top: 1rem; }
+      .grilla_marcas #zapatilla7 span {
+        margin-bottom: 0; }
+    .grilla_marcas #zapatilla8 {
+      margin-top: 0; }
+      .grilla_marcas #zapatilla8 span {
+        margin: 0; }
+    .grilla_marcas #zapatilla14 {
+      margin-bottom: 2.5rem; }
   footer p {
     font-size: 1.5rem; }
   .popUpShow {
@@ -481,16 +530,26 @@ footer {
   header .carrito button {
     font-size: 1.6rem; }
   main aside ul {
-    margin-left: 1.5rem; }
+    padding: 0;
+    margin-left: 1.2rem; }
     main aside ul .primera_div {
       margin: 1rem 0 0 0; }
     main aside ul .segunda_div {
-      margin: 2rem 0 2rem 0; }
+      margin: 1.2rem 0 2rem 0; }
     main aside ul li {
       margin: auto 1.8rem; }
+      main aside ul li button {
+        font-size: 1.5rem; }
+      main aside ul li #like {
+        margin: 1.5rem 1rem 0 0; }
   .grilla_marcas {
     margin: 4.5rem 0 15rem 0; }
   .popUpShow {
+    top: 38.7rem;
     width: 87%; }
   .footer_iconos {
-    flex-flow: column wrap; } }
+    flex-flow: column wrap; }
+  .notificar, .notificar2 {
+    font-size: 1.2rem; }
+  .swal2-popup {
+    font-size: 1rem; } }

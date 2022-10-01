@@ -85,6 +85,7 @@ let divMain = document.querySelector(".popUp");
 let botonCompraOn = document.getElementById("carritoCompra");
 let botonCompraOff = document.getElementById("botonOff");
 const totalCompra = document.getElementById("totalFinal");
+const compraExitosa = document.getElementById("botonCompra");
 
 botonCompraOn.addEventListener("click", () => {
     divMain.classList.toggle("popUpShow");

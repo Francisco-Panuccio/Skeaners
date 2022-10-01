@@ -14,6 +14,7 @@ function indexPrincipal() {
                 `
     sectionPrincipal.innerHTML = principal;
     traerArray();
+    arrayCarrito.length < 1 ? noHayCompra() : realizarCompra();
 }       
 
 function indexDinamico(eligeMarca) {
@@ -67,6 +68,8 @@ function crearVisualCarrito(identificador) {
         arrayCarrito.splice(indiceArrayClientes,1);
         calcularTotal();
         localStorage.setItem("Zapatillas", JSON.stringify(arrayCarrito));
+        notificacionEliminar();
+        arrayCarrito.length < 1 ? noHayCompra() : realizarCompra();
     })
     calcularTotal();
 }
@@ -84,6 +87,8 @@ function agregarAlCarrito(identificador) {
         crearVisualCarrito(identificador);
     }
     localStorage.setItem("Zapatillas", JSON.stringify(arrayCarrito));
+    notificacionAgregar();
+    arrayCarrito.length < 1 ? noHayCompra() : realizarCompra();
 }
 
 function calcularTotal() {
@@ -101,4 +106,42 @@ function traerArray() {
         arrayCarrito.push(zapatilla);
         crearVisualCarrito(zapatilla);
     })
+}
+
+function realizarCompra() {
+    compraExitosa.addEventListener("click", () => {
+        Swal.fire({
+            title: `¡Perfecto!`,
+            text: `Compra realizada con éxito`,
+            icon: `success`,
+        })
+    })
+}
+
+function noHayCompra() {
+    compraExitosa.addEventListener("click", () => {
+        Swal.fire({
+            title: `¡Lo Sentimos!`,
+            text: `No posee artículos en su carrito`,
+            icon: `error`,
+        })
+    })
+}
+
+function notificacionAgregar() {
+    Toastify({
+        text: "Artículo Agregado al Carrito",
+        duration: 1000,
+        position: "left",
+        className: `notificar2`,
+    }).showToast();
+}
+
+function notificacionEliminar() {
+    Toastify({
+        text: "Artículo Eliminado del Carrito",
+        duration: 1000,
+        position: "left",
+        className: `notificar`,
+    }).showToast();
 }
