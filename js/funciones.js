@@ -5,12 +5,12 @@ function indexPrincipal() {
                 <div><img src="./imagenes/1.png" alt="Amidas VS Pace"><p>Amidas VS Pace</p></div>
                 <div><img src="./imagenes/2.png" alt="Amidas Grand Court"><p>Amidas Grand Court</p></div>
                 <div><img src="./imagenes/5.png" alt="Like SB Zoom Blazer Low Pro"><p>Like SB Zoom <br class="br_especial"> Blazer Low Pro GT</p></div>
-                <div><img src="./imagenes/6.png" alt="Like SB Force 58 Premium"><p>Like SB Force <br> 58 Premium</p></div>
+                <div><img src="./imagenes/6.png" alt="Like SB Force 58 Premium"><p>Like SB Force <br class="br_especial"> 58 Premium</p></div>
                 <div><img src="./imagenes/9.png" alt="Phila Trend"><p>Phila Trend</p></div>
                 <div><img src="./imagenes/11.png" alt="Pluma Pro Classic"><p>Pluma Pro Classic</p></div>
                 <div><img src="./imagenes/15.png" alt="Cappa Logo Asti"><p>Cappa Logo Asti</p></div>
                 <div><img src="./imagenes/13.png" alt="Tupper Drive"><p>Tupper Drive</p></div>
-                <div><img src="./imagenes/14.png" alt="Tupper Ultralight II Mesh"><p>Tupper Ultralight <br> II Mesh</p></div>
+                <div><img src="./imagenes/14.png" alt="Tupper Ultralight II Mesh"><p>Tupper Ultralight <br class="br_especial"> II Mesh</p></div>
                 `
     sectionPrincipal.innerHTML = principal;
     traerArray();
@@ -40,7 +40,7 @@ function indexDinamico(eligeMarca) {
 function crearVisualZapatilla(calzado) {
     return `
             <div id="zapatilla${calzado.id}">
-                <img src="/imagenes/${calzado.id}.png" class="imagenesZap">
+                <img src="./imagenes/${calzado.id}.png" class="imagenesZap">
                 <p>${calzado.marca + calzado.nombre}</p>
                 <br class="salto">
                 <span class="precio">${"$" + calzado.precio.toLocaleString()}</span>
