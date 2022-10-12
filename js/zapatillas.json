@@ -1,0 +1,18 @@
+[
+    {"nombre": "VS Pace", "marca":"Amidas ", "precio": 8000, "cantidad":1, "id": 1},
+    {"nombre": "Grant Court", "marca":"Amidas ", "precio": 12000, "cantidad":1, "id": 2},
+    {"nombre": "Forum Low", "marca":"Amidas ", "precio": 20000, "cantidad":1, "id": 3},
+    {"nombre": "Solarcontrol", "marca":"Amidas ", "precio": 25000, "cantidad":1, "id": 4},
+    {"nombre": "SB Zoom Blazer Low Pro GT", "marca":"Like ", "precio": 15000, "cantidad":1, "id": 5},
+    {"nombre": "SB Force 58 Premium", "marca":"Like ", "precio": 12000, "cantidad":1, "id": 6},
+    {"nombre": "SB Force 58", "marca":"Like ", "precio": 9000, "cantidad":1, "id": 7},
+    {"nombre": "Air Zoom Pulse Pulse 58 Premium", "marca":"Like ", "precio": 18000, "cantidad":1, "id": 8},
+    {"nombre": "Trend 2.0", "marca":"Phila ", "precio": 6000, "cantidad":1, "id": 9},
+    {"nombre": "Novaro", "marca":"Phila ", "precio": 10000, "cantidad":1, "id": 10},
+    {"nombre": "Pro Classic", "marca":"Pluma ", "precio": 15000, "cantidad":1, "id": 11},
+    {"nombre": "PI Speedfusion", "marca":"Pluma ", "precio": 18000, "cantidad":1, "id": 12},
+    {"nombre": "Drive", "marca":"Tupper ", "precio": 8000, "cantidad":1, "id": 13},
+    {"nombre": "Ultralight II Mesh", "marca":"Tupper ", "precio": 5700, "cantidad":1, "id": 14},
+    {"nombre": "Logo Asti", "marca":"Cappa ", "precio": 6700, "cantidad":1, "id": 15},
+    {"nombre": "Falvo", "marca":"Cappa ", "precio": 8000, "cantidad":1, "id": 16}
+]

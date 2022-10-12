@@ -18,23 +18,28 @@ function indexPrincipal() {
 }       
 
 function indexDinamico(eligeMarca) {
-    const zapatillasFiltradas = arrayZapatillas.filter(el => el.marca.includes(eligeMarca));
     sectionPrincipal.className = ("grilla_marcas");
     sectionPrincipal.innerHTML = "";
-    zapatillasFiltradas.forEach(calzado => { 
-        sectionPrincipal.innerHTML += crearVisualZapatilla(calzado);
-    });
-    const botonesCantidad = document.querySelectorAll(".botonAgregar");
-    for(const botonCantidad of botonesCantidad) {
-        botonCantidad.addEventListener("click", (e) => {
-            divMain.className = "popUpShow";
-            const identificador = zapatillasFiltradas.find(busc => busc.id == botonCantidad.id);
-            agregarAlCarrito(identificador);
-            botonCompraOn.addEventListener("click", () => {
-                divMain.classList.toggle("popUp");
+    fetch("./js/zapatillas.json")
+        .then(respuesta => respuesta.json())
+        .then(datos => {
+            const zapatillasFiltradas = datos.filter(el => el.marca.includes(eligeMarca))
+            zapatillasFiltradas.forEach(calzado => {
+                sectionPrincipal.innerHTML += crearVisualZapatilla(calzado);
             });
-        })
-    }
+            const botonesCantidad = document.querySelectorAll(".botonAgregar");
+            for(const botonCantidad of botonesCantidad) {
+                botonCantidad.addEventListener("click", (e) => {
+                    divMain.className = "popUpShow";
+                    const identificador = zapatillasFiltradas.find(busc => busc.id == botonCantidad.id);
+                    agregarAlCarrito(identificador);
+                    botonCompraOn.addEventListener("click", () => {
+                        divMain.classList.toggle("popUp");
+                    });
+                });
+            };
+            
+        });
 }
 
 function crearVisualZapatilla(calzado) {
