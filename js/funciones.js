@@ -113,6 +113,16 @@ function traerArray() {
     })
 }
 
+function eliminarCarritoEntero() {
+    let divCreados = document.querySelectorAll(".popUp2");
+    for(const divs of divCreados) {
+        divs.remove();
+    }
+    arrayCarrito.splice(0);
+    calcularTotal();
+    localStorage.setItem("Zapatillas", JSON.stringify(arrayCarrito));
+}
+
 function realizarCompra() {
     compraExitosa.addEventListener("click", () => {
         Swal.fire({
@@ -120,6 +130,7 @@ function realizarCompra() {
             text: `Compra realizada con éxito`,
             icon: `success`,
         })
+        eliminarCarritoEntero();
     })
 }
 
