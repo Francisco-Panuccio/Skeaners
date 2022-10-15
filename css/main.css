@@ -524,6 +524,26 @@ footer {
     position: fixed;
     z-index: 1; } }
 
+@media only screen and (max-width: 450px) {
+  header .carrito button {
+    margin-left: 4rem; }
+  main aside ul {
+    padding: 0;
+    margin-left: 1.2rem; }
+    main aside ul .primera_div {
+      margin: 1rem 0 0 0; }
+    main aside ul .segunda_div {
+      margin: 1.2rem 0 2rem 0; }
+    main aside ul li {
+      margin: auto 1.8rem; }
+      main aside ul li button {
+        font-size: 1.5rem; }
+      main aside ul li #like {
+        margin: 0; }
+  .popUpShow {
+    top: 34.9rem;
+    width: 87%; } }
+
 @media only screen and (max-width: 390px) {
   header h1 {
     font-size: 6rem; }
@@ -544,11 +564,11 @@ footer {
         margin: 1.5rem 1rem 0 0; }
   .grilla_marcas {
     margin: 4.5rem 0 15rem 0; }
+  .footer_iconos {
+    flex-flow: column wrap; }
   .popUpShow {
     top: 38.7rem;
     width: 87%; }
-  .footer_iconos {
-    flex-flow: column wrap; }
   .notificar, .notificar2 {
     font-size: 1.2rem; }
   .swal2-popup {

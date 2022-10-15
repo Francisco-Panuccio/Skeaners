@@ -231,6 +231,45 @@
     }
 }
 
+@media only screen and (max-width: 450px) {
+    header {
+        .carrito {
+            button {
+                margin-left: 4rem;
+            }
+        }
+    }
+
+    main {
+        aside {
+            ul {
+                padding: 0;
+                margin-left: 1.2rem;
+                .primera_div {
+                    margin: 1rem 0 0 0;
+                }
+                .segunda_div {
+                    margin: 1.2rem 0 2rem 0;
+                }
+                    li {
+                        margin: auto 1.8rem;
+                            button {
+                                font-size: 1.5rem;
+                            }
+                            #like {
+                                margin: 0;
+                            }
+                    }
+            }
+        }
+}
+
+    .popUpShow {
+        top: 34.9rem;
+        width: 87%;
+    }
+}
+
 @media only screen and (max-width: 390px) {
     header {
         h1 {
@@ -271,13 +310,13 @@
         margin: 4.5rem 0 15rem 0;
     }
 
+    .footer_iconos {
+        flex-flow: column wrap;
+    }
+    
     .popUpShow {
         top: 38.7rem;
         width: 87%;
-    }
-
-    .footer_iconos {
-        flex-flow: column wrap;
     }
 
     .notificar,.notificar2 {

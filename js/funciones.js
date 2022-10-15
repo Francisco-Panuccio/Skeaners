@@ -64,7 +64,7 @@ function crearVisualCarrito(identificador) {
                     `
     let botonEliminar = document.createElement("button");
     botonEliminar.className = "eliminar";
-    botonEliminar.innerHTML = `<img src = "../imagenes/bin.png">`
+    botonEliminar.innerHTML = `<img src = "./imagenes/bin.png">`
     div.appendChild(botonEliminar);
     divMain.prepend(div);
     botonEliminar.addEventListener("click", () => {
@@ -121,6 +121,7 @@ function eliminarCarritoEntero() {
     arrayCarrito.splice(0);
     calcularTotal();
     localStorage.setItem("Zapatillas", JSON.stringify(arrayCarrito));
+    arrayCarrito.length < 1 ? noHayCompra() : realizarCompra();
 }
 
 function realizarCompra() {
