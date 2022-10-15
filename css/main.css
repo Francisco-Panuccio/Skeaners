@@ -540,6 +540,8 @@ footer {
         font-size: 1.5rem; }
       main aside ul li #like {
         margin: 0; }
+  footer p {
+    font-size: 1.3rem; }
   .popUpShow {
     top: 34.9rem;
     width: 87%; } }
